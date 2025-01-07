@@ -1,0 +1,13 @@
+{
+  "#-A":"{#Left}{^}",
+  "#-K":"{#Down}{^}",
+  "#-T":"{#Right}{^}",
+  "#-S":"{#Up}{^}",
+  "#-O": "{#Control_L(Home)}{^}",
+  "#-Y": "{#Control_L(End)}{^}",
+  "-*": "{#Delete}",
+  "*-": "{#BackSpace}",
+  "*-*": "{PLOVER:TOGGLE}",
+  "*Y": "{PLOVER:SWITCH_SYSTEM:English Stenotype}",
+  "*#": "{MODE:SET_SPACE:}"
+}
