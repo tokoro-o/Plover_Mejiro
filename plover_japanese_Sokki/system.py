@@ -55,4 +55,4 @@ KEYMAPS = {
 
 
 DICTIONARIES_ROOT = 'asset:plover_japanese_Sokki:dictionaries'
-DEFAULT_DICTIONARIES = ('Plover_Japanese_Sokki.py','abbreviation_for_Sokki.json','commands_for_Sokki.json')
+DEFAULT_DICTIONARIES = ('Plover_Japanese_Sokki_Roma.py','abbreviation_for_Sokki.json','commands_for_Sokki.json')
