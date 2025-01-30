@@ -33,11 +33,11 @@ def lookup(key):
 
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
-    Consonants =    ["","t","h","k","s","b","m","z","d","r","n","p","w","x","v","b"]
+    Consonants =    ["","t","n","k","s","h","m","z","d","r","g","p","w","x","b","v"]
     listconsonant = ["","T","H","K","S","TH","TK","TS","HK","HS","KS","THK","TKS","THKS","THS","HKS"]
 
-    Vowels =    ["u","a","i","o","oi","e","ou","ii","oo","uu"]
-    Vowels2 =   ["you","ai","yuu","yo","yu","ei","ae","yu","aa","ui"]
+    Vowels =    ["u","a","i","o","ii","ai","e","yuu","oo","ui"]
+    Vowels2 =   ["you","ou","ya","yo","yu","ei","oi","aa","ae","uu"]
     listvowel = ["","A","I","O","X","AI","AO","IX","OX","AIO"]
 
     if LeftVowel not in listvowel:
@@ -90,7 +90,7 @@ def lookup(key):
     listSecondWord = ["","xn","tu","ku","xtu","ti","ki","-"]
     listLParticle = ["","no","te","ka","de","na","ni","mo"]
     listRParticle = ["","no","de","ka","xtute","ha","ni","mo"]
-    listOnlyLParticle = ["","nai","te","ga","to","na","wo","ya"]
+    listOnlyLParticle = ["","nai","te","ga","to","na","wo","tame"]
 
     #LeftParticleになにかあって左の指の入力もあるとき
     if LeftParticle and resultL:
