@@ -38,7 +38,7 @@ def lookup(key):
 
     Vowels =    ["u","a","i","o","aa","ou","e","u","oo","uu"]
     Vowels2 =   ["you","ya","yu","yo","ui","ai","ei","yuu","oi","ii"]
-    listvowel = ["","A","I","O","X","AI","AO","IO","OX","AIO"]
+    listvowel = ["","A","I","O","X","AI","AO","IX","OX","AIO"]
 
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
