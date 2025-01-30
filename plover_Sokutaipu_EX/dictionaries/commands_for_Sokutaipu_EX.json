@@ -1,0 +1,17 @@
+{
+  "#-A":"{#Left}{^}",
+  "#-K":"{#Down}{^}",
+  "#-T":"{#Right}{^}",
+  "#-KS":"{#Up}{^}",
+  "#-O": "{#Control_L(Home)}{^}",
+  "#-Y": "{#Control_L(End)}{^}",
+  "-*": "{#BackSpace}",
+  "*-*": "{#Delete}",
+  "#": "{PLOVER:TOGGLE}",
+  "*HSI*HSI": "{^\n^}",
+  "*HSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "*HS#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "*H#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "HS#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "HSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}"
+}
