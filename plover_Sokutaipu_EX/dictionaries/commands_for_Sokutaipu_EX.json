@@ -5,13 +5,13 @@
   "#-KS":"{#Up}{^}",
   "#-O": "{#Control_L(Home)}{^}",
   "#-Y": "{#Control_L(End)}{^}",
-  "-*": "{#BackSpace}",
-  "*-*": "{#Delete}",
-  "#": "{PLOVER:TOGGLE}",
+  "*#*": "{PLOVER:TOGGLE}",
+  "#" : "=repeat_last_translation",
   "*HSI*HSI": "{^\n^}",
   "*HSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
   "*HS#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
   "*H#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
   "HS#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
-  "HSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}"
+  "HSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "*#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}"
 }
