@@ -107,9 +107,9 @@ def lookup(key):
     listLParticle = ["","}{#Space}{","}{#F6}{","}{#F7}{","}{#F8}{","}{#F9}{","}{#F10}{","}{#F10}{#F10}{"]
     listRParticle = ["","\n",".",",","?",".\n",",\n","!"]
 
-    めいし = ["ko","to","ki","mo","ha"]
+    めいし = ["ko","ta","to","ki","mo","ha"]
     助詞 = ["","no","de","ga","wo","ni","ha","mo"]
-    名詞 = ["koto","tokoro","toki","mono","hanasi"]
+    名詞 = ["koto","tame","tokoro","toki","mono","hanasi"]
 
     どうし = ["","i","su","a","na","da","de","yu"]
     動詞 = [["","nai","ta","masu","masita","nakaxtuta","masexn","masexndesita"],
