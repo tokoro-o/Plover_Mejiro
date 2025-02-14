@@ -111,12 +111,13 @@ def lookup(key):
     助詞 = ["","no","de","ga","wo","ni","ha","mo"]
     名詞 = ["koto","tokoro","toki","mono","hanasi"]
 
-    どうし = ["","i","su","a","na","de","yu"]
+    どうし = ["","i","su","a","na","da","de","yu"]
     動詞 = [["","nai","ta","masu","masita","nakaxtuta","masexn","masexndesita"],
           ["iru","inai","ita","imasu","imasita","inakaxtuta","imasexn","imasexndesita"],
           ["suru","sinai","sita","simasu","simasita","sinakaxtuta","simasexn","simasexndesita"],
           ["aru","nai","axtuta","arimasu","arimasita","nakaxtuta","arimasexn","arimasexndesita"],
           ["naru","naranai","naxtuta","narimasu","nasimasita","naranakaxtuta","narimasexn","narimasexndesita"],
+          ["da","dehanai","daxtuta","desu","desita","dehanakaxtuta","dehaarimasexn","dehaarimasexndesita"],
           ["dekiru","dekinai","dekita","dekimasu","dekimasita","dekinakaxtuta","dekimasexn","dekimasexndesita"],
           ["iu","iwanai","ixtuta","iimasu","iimasita","iwanakaxtuta","iimasexn","iimasexndesita"]]
     
