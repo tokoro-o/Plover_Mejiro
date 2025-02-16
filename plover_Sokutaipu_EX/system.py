@@ -68,4 +68,4 @@ KEYMAPS = {
 
 
 DICTIONARIES_ROOT = 'asset:plover_Sokutaipu_EX:dictionaries'
-DEFAULT_DICTIONARIES = ('Plover_Sokutaipu_EV_.py','abbreviation_for_Sokutaipu_EX.json','commands_for_Sokutaipu_EX.json')
+DEFAULT_DICTIONARIES = ('Plover_Sokutaipu_EX_.py','abbreviation_for_Sokutaipu_EX.json','commands_for_Sokutaipu_EX.json')
