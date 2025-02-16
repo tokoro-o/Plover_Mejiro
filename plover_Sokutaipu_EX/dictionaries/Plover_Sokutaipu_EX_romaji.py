@@ -105,7 +105,7 @@ def lookup(key):
     listParticle = ["","n","t","k","tk","tn","kn","tkn"]
     listSecondWord = ["","xn","tu","ku","xtu","ti","ki","-"]
     listLParticle = ["","}{#Space}{","}{#F6}{","}{#F7}{","}{#F8}{","}{#F9}{","}{#F10}{","}{#F10}{#F10}{"]
-    listRParticle = ["","\n",".",",","?",".\n",",\n","!"]
+    listRParticle = ["","}{#Return}{",".",",","?",".}{#Return}{",",}{#Return}{","!"]
 
     めいし = ["ko","ta","to","ki","mo","ha"]
     助詞 = ["","no","de","ga","wo","ni","ha","mo"]
