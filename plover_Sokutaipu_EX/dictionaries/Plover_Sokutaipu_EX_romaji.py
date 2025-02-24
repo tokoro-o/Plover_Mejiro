@@ -40,8 +40,8 @@ def lookup(key):
 
     #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
     #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
-    Vowels =    ["u","a","i","o","yu","e","ou","ya","oo","ui"]
-    Vowels2 =   ["you","ai","ii","oi","au","ei","yuu","yo","ae","uu"]
+    Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
+    Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","X","AI","AO","IX","OX","AIO"]
 
     if LeftVowel not in listvowel:
