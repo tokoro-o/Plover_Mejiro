@@ -27,3 +27,8 @@ which originally look like
   a  s  d  f  g  h  j  k  l  ;
    z  x  c  v  b  n  m  ,  .  
             space  enter   
+
+## To Learn Theory
+
+read this note(sorry it's witten in only japasease)
+https://note.com/jeebis_keyboard/n/ndb99792d80e9
