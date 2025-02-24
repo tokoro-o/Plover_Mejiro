@@ -1,4 +1,4 @@
-#*YNKTSAIOUtkn#*YNKTSAIOUtkn
+#*YTKNSAIOUtkn#*YTKNSAIOUtkn
 import re
 
 LONGEST_KEY = 1
@@ -11,7 +11,7 @@ def lookup(key):
         print("key error*")
         raise KeyError
     
-    regex = re.compile(r"(\*?)(Y?)(N?K?T?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(N?K?T?S?)(A?I?O?U?)(t?k?n?)(1?2?3?4?5?6?7?8?9?0?)")
+    regex = re.compile(r"(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(1?2?3?4?5?6?7?8?9?0?)")
     regex_groups = re.search(regex, stroke)
 
     LeftAsterisk = regex_groups.group(1)
@@ -35,8 +35,8 @@ def lookup(key):
 
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
-    Consonants =    ["","n","k","t","s","h","m","z","g","r","d","w","p","x","b","f"]
-    listconsonant = ["","N","K","T","S","NK","NT","NS","TS","KS","KT","NKT","NTS","NKTS","NKS","KTS"]
+    Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","x","b","f"]
+    listconsonant = ["","T","K","N","S","TK","TN","TS","NS","KS","KN","TKN","TNS","TKNS","TKS","KNS"]
 
     #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
     #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
@@ -102,6 +102,8 @@ def lookup(key):
             output = "でぃ"
         elif かな == "dyuu":
             output = "てぃ"
+        elif かな == "dya":
+            output = "ちぇ"
         else:
             output = kana[ConsonantOrder.index(Consonants[listconsonant.index(Conso)])][searchVowel(Ys + Vowel)]
             if searchVowel2(Ys + Vowel) != 99:
