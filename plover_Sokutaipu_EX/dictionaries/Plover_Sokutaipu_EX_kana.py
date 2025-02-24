@@ -1,4 +1,4 @@
-#*YTHKSAIOXtkn#*YTHKSAIOXtkn
+#*YNKTSAIOUtkn#*YNKTSAIOUtkn
 import re
 
 LONGEST_KEY = 1
@@ -11,7 +11,7 @@ def lookup(key):
         print("key error*")
         raise KeyError
     
-    regex = re.compile(r"(\*?)(Y?)(T?H?K?S?)(A?I?O?X?)(t?k?n?)(\-?#?)(\*?)(Y?)(T?H?K?S?)(A?I?O?X?)(t?k?n?)(1?2?3?4?5?6?7?8?9?0?)")
+    regex = re.compile(r"(\*?)(Y?)(N?K?T?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(N?K?T?S?)(A?I?O?U?)(t?k?n?)(1?2?3?4?5?6?7?8?9?0?)")
     regex_groups = re.search(regex, stroke)
 
     LeftAsterisk = regex_groups.group(1)
@@ -36,15 +36,15 @@ def lookup(key):
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
     Consonants =    ["","n","k","t","s","h","m","z","g","r","d","w","p","x","b","f"]
-    listconsonant = ["","T","H","K","S","TH","TK","TS","KS","HS","HK","THK","TKS","THKS","THS","HKS"]
+    listconsonant = ["","N","K","T","S","NK","NT","NS","TS","KS","KT","NKT","NTS","NKTS","NKS","KTS"]
 
     #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
     #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
     Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
-    listvowel = ["","A","I","O","X","AI","AO","IX","OX","AIO"]
-    firstvowel = [["A","YA","YOX","AIO"],["I","YIX"],["","YX","YAIO"],["AI","YAI"],["O","AO","YO","YAO"],["X"],["OX","IX"],["Y","YI"]]# a,i,u,e,o,ya,yu,yo
-    secondvowel = [["YX","YA","YIX","YO","YAI"],["AO","Y","IX","YAIO"],["YOX"],["YAO"]]# i,u,e,o
+    listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
+    firstvowel = [["A","YA","YOU","AIO"],["I","YIU"],["","YU","YAIO"],["AI","YAI"],["O","AO","YO","YAO"],["U"],["OU","IU"],["Y","YI"]]# a,i,u,e,o,ya,yu,yo
+    secondvowel = [["YU","YA","YIU","YO","YAI"],["AO","Y","IU","YAIO"],["YOU"],["YAO"]]# i,u,e,o
     ConsonantOrder = ["","k","s","t","n","h","m","r","w","g","d","z","b","p","f","x"]
 
     kana = [["あ","い","う","え","お","や","ゆ","よ"],
