@@ -40,11 +40,11 @@ def lookup(key):
 
     #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
     #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
-    Vowels =    ["u","a","i","o","yu","e","ou","ya","oo","ui"]
-    Vowels2 =   ["you","ai","ii","oi","au","ei","yuu","yo","ae","uu"]
+    Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
+    Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","X","AI","AO","IX","OX","AIO"]
-    firstvowel = [["A","YA","YOX","YX"],["I","YI"],["","AIO","YAIO"],["AI","YAI"],["O","AO","OX","YO"],["IX"],["X","YAO"],["Y","YIX"]]# a,i,u,e,o,ya,yu,yo
-    secondvowel = [["AIO","YA","YI","YO","YAI"],["AO","Y","YX","YAO","YAIO"],["YOX"],["OX"]]# i,u,e,o
+    firstvowel = [["A","YA","YOX","AIO"],["I","YIX"],["","YX","YAIO"],["AI","YAI"],["O","AO","YO","YAO"],["X"],["OX","IX"],["Y","YI"]]# a,i,u,e,o,ya,yu,yo
+    secondvowel = [["YX","YA","YIX","YO","YAI"],["AO","Y","IX","YAIO"],["YOX"],["YAO"]]# i,u,e,o
     ConsonantOrder = ["","k","s","t","n","h","m","r","w","g","d","z","b","p","f","x"]
 
     kana = [["あ","い","う","え","お","や","ゆ","よ"],
