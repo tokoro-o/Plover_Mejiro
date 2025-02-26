@@ -1,11 +1,4 @@
 {
-  "#-A":"{#Left}{^}",
-  "#-N":"{#Down}{^}",
-  "#-T":"{#Right}{^}",
-  "#-NS":"{#Up}{^}",
-  "#-S":"{#Up}{^}",
-  "#-O": "{#Control_L(Home)}{^}",
-  "#-Y": "{#Control_L(End)}{^}",
   "*#*": "{PLOVER:TOGGLE}",
   "#*": "{PLOVER:TOGGLE_DICT:!sokutaipu_ex_romaji.py,!sokutaipu_ex_kana.py}",
   "#" : "=repeat_last_translation",
@@ -15,5 +8,39 @@
   "*K#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
   "KS#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
   "KSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
-  "*#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}"
+  "*#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+
+  "-O":"{#BackSpace}","-AO":"{#BackSpace}{#BackSpace}",
+  "-YO":"{#Delete}","-YAO":"{#Delete}{#Delete}",
+
+                       "-S":"{^}{#Up}{^}",
+  "-A":"{^}{#Left}{^}","-N":"{^}{#Down}{^}","-T":"{^}{#Right}{^}",
+                "-YS":"{^↑^}",
+  "-YA":"{^←^}","-YN":"{^↓^}","-YT":"{^→^}",
+
+  "-I":"{^}{#Control_L(Home)}{^}","-K":"{^}{#Control_L(End)}{^}",
+
+  "-SI":"{^(^}","-YSI":"{^<^}","-KS":"{^)^}","-YKS":"{^>^}",  
+  "-KSI":"{^()^}{#Left}{^}","-YKSI":"{^<>^}{#Left}{^}",
+
+  "-NA":"{^[^}","-YNA":"{^\\{^}","-TN":"{^]^}","-YTN":"{^\\}^}",  
+  "-TNA":"{^[]^}{#Left}{^}","-YTNA":"{^\\{\\}^}{#Left}{^}",
+
+  "-TA":"{^][^}","-YTA":"{^\\}\\{^}",
+  "-KI":"{^)(^}","-YKI":"{^><^}",
+
+  "-TSA":"{^^^}","-YTSA":"{^^^^}{#Left}{^}",
+  
+  "-KSA":"{^~^}","-YKSA":"{^=^}",
+  "-TNI":"{^…^}","-YTNI":"{^・^}",
+
+  "-TKS":"{^々^}","-YTKS":"{^ヶ^}",
+  "-KNS":"{^\\^}","-YKNS":"{^＄^}",
+  "-TKN":"{^°^}","-YTKN":"{^℃^}",
+  "-TNS":"{^%^}","-YTNS":"{^&^}",
+  "-TKNS":"{^#^}","-YTKNS":"{^+^}",
+  "-NS":"{^:^}","-YNS":"{^;^}",
+  "-TK":"{^※^}","-YTK":"{^*^}",
+  "-TS":"{^\"^}","-YTS":"{^'^}",
+  "-KN":"{^/^}","-YKN":"{^〆^}"
 }
