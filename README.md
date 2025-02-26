@@ -29,5 +29,5 @@ which originally look like
 ```
 ## To Learn Theory
 
-read this [note](https://note.com/jeebis_keyboard/n/ndb99792d80e9)
+Read this [note](https://note.com/jeebis_keyboard/n/ndb99792d80e9)
 (It's written in only Japanease)
