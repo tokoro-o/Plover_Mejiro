@@ -67,5 +67,5 @@ KEYMAPS = {
 }
 
 
-DICTIONARIES_ROOT = 'asset:Sokutaipu-EX:dictionaries'
+DICTIONARIES_ROOT = 'asset:Sokutaipu_EX:dictionaries'
 DEFAULT_DICTIONARIES = ('Sokutaipu_EX_kana.py','abbreviation_for_Sokutaipu_EX.json','commands_for_Sokutaipu_EX.json')
