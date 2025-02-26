@@ -43,7 +43,7 @@ def lookup(key):
     Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
-
+    
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
     if RightVowel not in listvowel:
@@ -76,7 +76,7 @@ def lookup(key):
             elif output == "wyo":
                 output = "uxo"
             elif output == "dya":
-                output = "tye"
+                output = "thi"
             elif output == "dyou":
                 output = "dei"
             elif output == "dyuu":
@@ -89,10 +89,6 @@ def lookup(key):
                 output = "de"
             elif output == "de":
                 output = "du"
-            elif output == "nu":
-                output = ni"
-            elif output == "ni":
-                output = "nu"
             elif output == "fu":
                 output = "vu"
 

@@ -102,8 +102,6 @@ def lookup(key):
             output = "でぃ"
         elif かな == "dyuu":
             output = "てぃ"
-        elif かな == "dya":
-            output = "ちぇ"
         else:
             output = kana[ConsonantOrder.index(Consonants[listconsonant.index(Conso)])][searchVowel(Ys + Vowel)]
             if searchVowel2(Ys + Vowel) != 99:
@@ -132,20 +130,23 @@ def lookup(key):
     listLParticle = ["","}{#Space}{","}{#F6}{","}{#F7}{","}{#F8}{","}{#F9}{","}{#F10}{","}{#F10}{#F10}{"]
     listRParticle = ["","}{#Return}{",".",",","?",".}{#Return}{",",}{#Return}{","!"]
 
-    助詞 = ["","の","で","が","を","に","は","も"]
-    めいし = ["こ","た","と","き","も","は","に","ほ"]
-    名詞 = ["こと","ため","ところ","とき","もの","はなし","なに","ほう"]
+    語尾 = ["の","んな","うし","ちら","っち","ういう","こ","れ"]
+    こそあど = ["こ","そ","あ","ど"]
 
-    どうし = ["","い","て","あ","く","す","な","み","だ","で","ゆ","げ","さ","う","か"]
-    動詞 = [["","ない","た","ます","ました","って","ません","なかった"],
-          ["いる","いない","いた","います","いました","いて","いません","い"],
+    助詞 = ["","の","で","が","を","に","は","も"]
+    めいし = ["と","た","ろ","き","も","は","に","ほ","よう"]
+    名詞 = ["こと","ため","ところ","とき","もの","はなし","なに","ほう","よう"]
+
+    どうし = ["","い","て","る","く","す","な","み","だ","で","ゆ","げ","さ","う","か"]
+    動詞 = [["","ない","やった","ます","ました","って","ません","なかった"],
+          ["いる","いない","いた","います","いました","いて","いません","いうこと"],
           ["ている","ていない","ていた","ています","ていました","ていて","ていません","てい"],
           ["ある","ない","あった","あります","ありました","あって","ありません","あり"],
           ["くる","こない","きた","きます","きました","きて","きません","き"],
           ["する","しない","した","します","しました","して","しません","し"],
           ["なる","ならない","なった","なります","なりました","なって","なりません","なり"],
           ["みる","みない","みた","みます","みました","みて","みません","み"],
-          ["だ","ではない","だった","です","でした","であって","ではありません","であり"],
+          ["です","ではない","だった","であります","でした","であって","ではありません","であり"],
           ["できる","できない","できた","できます","できました","できて","できません","でき"],
           ["いう","いわない","いった","いいます","いいました","いって","いいません","いい"],
           ["あげる","あげない","あげた","あげます","あげました","あげて","あげません","あげ"],
@@ -154,15 +155,35 @@ def lookup(key):
           ["かんがえる","かんがえない","かんがえた","かんがえます","かんがえました","かんがえて","かんがえません","かんがえ"]]
     
     if LeftAsterisk and (resultL or LeftParticle):
-            if resultL in どうし:
+            if resultL in こそあど:
+                resultL += 語尾[listParticle.index(LeftParticle)]
+                if resultL == "あこ":
+                    resultL == "あそこ"
+                elif resultL == "あういう":
+                    resultL == "ああいう"
+                elif resultL == "あうし":
+                    resultL == "ああし"
+            elif resultL in どうし:
                 resultL = 動詞[どうし.index(resultL)][listParticle.index(LeftParticle)]
             elif resultL in めいし:
                 resultL = 名詞[めいし.index(resultL)] + 助詞[listParticle.index(LeftParticle)]
+                if resultL == "ようが":
+                    resultL = "ような"
     if RightAsterisk and (resultR or RightParticle):
-            if resultR in どうし:
+            if resultR in こそあど:
+                resultR += 語尾[listParticle.index(RightParticle)]
+                if resultR == "あこ":
+                    resultR == "あそこ"
+                elif resultR == "あういう":
+                    resultR == "ああいう"
+                elif resultR == "あうし":
+                    resultR == "ああし"
+            elif resultR in どうし:
                 resultR = 動詞[どうし.index(resultR)][listParticle.index(RightParticle)]
             elif resultR in めいし:
                 resultR = 名詞[めいし.index(resultR)] + 助詞[listParticle.index(RightParticle)]
+                if resultR == "ようが":
+                    resultR = "ような"
     
     #LeftParticleになにかあって左の指の入力もあるとき
     if not LeftAsterisk and LeftParticle and (resultL or resultR):
@@ -184,6 +205,9 @@ def lookup(key):
     if not resultL and resultR and not LeftParticle:
         print("右手略語")
         return ""
+    elif (resultL or resultR) and "#" in stroke:
+        print("{^" + result * 2 + "^}")
+        return "{^" + result * 2 + "^}"
     else:
         print("{^" + result + "^}")
         return "{^" + result + "^}"
