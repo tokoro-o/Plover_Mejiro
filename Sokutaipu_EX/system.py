@@ -34,10 +34,10 @@ KEYMAPS = {
         'I-' : 'r',
         'O-' : 'g',
         'U-' : 't',
-        't-' : 'v',
-        'k-' : 'b',
+        't-' : 'c',
+        'k-' : 'v',
         'n-' : 'space',
-        '#'  : 'c',
+        '#'  : 'b',
         '-*' : ('p','[',']'),
         '-Y' : ';',
         '-T' : 'l',
@@ -68,4 +68,4 @@ KEYMAPS = {
 
 
 DICTIONARIES_ROOT = 'asset:Sokutaipu_EX:dictionaries'
-DEFAULT_DICTIONARIES = ('commands_for_Sokutaipu_EX.json','abbreviation_for_Sokutaipu_EX.json','Sokutaipu_EX_kana.py')
+DEFAULT_DICTIONARIES = ('commands_for_Sokutaipu_EX.json','Sokutaipu_EX_kana.py')
