@@ -36,7 +36,7 @@ def lookup(key):
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
     Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","x","b","f"]
-    listconsonant = ["","T","K","N","S","KN","TN","NS","TS","KS","TK","TKN","TNS","TKNS","KNS","TKS"]
+    listconsonant = ["","T","K","N","S","TK","TN","TS","NS","KS","KN","TKN","TNS","TKNS","TKS","KNS"]
 
     #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
     #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
@@ -44,6 +44,15 @@ def lookup(key):
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
     
+    excepts_in = ["ni","nu","nyuu","nyou",
+                  "wu","wya","wyu","wyo","wyuu","wyou","wii","wui","wuu",
+                  "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
+                  "fu","fyuu","fyou","faa","fai","fae","fii","fui","fuu","fei","foi","fou","foo"]
+    excepts_out = ["nu","ni","nyou","nyuu",
+                   "u","yaa","iu","yone","ee","we","ii","ui","uu",
+                   "thi","de","du","tye","sye","dhi","dei","zye","zuxi",
+                   "vu","qa","qo","","","","","","","","","",""]
+
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
     if RightVowel not in listvowel:
@@ -65,33 +74,8 @@ def lookup(key):
                 #そうでないとき
                 output += Vowels[listvowel.index(Vowel)]
 
-            if output == "wu":
-                output = "u"
-            elif output == "wya":
-                output = "uxa"
-            elif output == "wyu":
-                output = "uxe"
-            elif output == "wyuu":
-                output = "uxi"
-            elif output == "wyo":
-                output = "uxo"
-            elif output == "dya":
-                output = "thi"
-            elif output == "dyou":
-                output = "dei"
-            elif output == "dyuu":
-                output = "thi"
-            elif output == "dei":
-                output = "dhi"
-            elif output == "dyo":
-                output = "dhi"
-            elif output == "du":
-                output = "de"
-            elif output == "de":
-                output = "du"
-            elif output == "fu":
-                output = "vu"
-
+            if output in excepts_in:
+                output = excepts_out[excepts_in.index(output)]
         print(output)
         return output
 

@@ -47,6 +47,15 @@ def lookup(key):
     secondvowel = [["YU","YA","YIU","YO","YAI"],["AO","Y","IU","YAIO"],["YOU"],["YAO"]]# i,u,e,o
     ConsonantOrder = ["","k","s","t","n","h","m","r","w","g","d","z","b","p","f","x"]
 
+    excepts_in = ["ni","nu","nyuu","nyou",
+                  "wya","wyu","wyo","wyuu","wyou","wii","wui","wuu",
+                  "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
+                  "fu","fyuu","fyou","faa","fai","fae","fii","fui","fuu","fei","foi","fou","foo"]
+    excepts_out = ["ぬ","に","にょう","にゅう",
+                   "やあ","いう","よね","ええ","うぇ","いい","うい","うう",
+                   "てぃ","で","づ","ちぇ","しぇ","でぃ","でい","じぇ","ずぃ",
+                   "ヴ","くぁ","くぉ","","","","","","","","","",""]
+
     kana = [["あ","い","う","え","お","や","ゆ","よ"],
             ["か","き","く","け","こ","きゃ","きゅ","きょ"],
             ["さ","し","す","せ","そ","しゃ","しゅ","しょ"],
@@ -55,9 +64,9 @@ def lookup(key):
             ["は","ひ","ふ","へ","ほ","ひゃ","ひゅ","ひょ"],
             ["ま","み","む","め","も","みゃ","みゅ","みょ"],
             ["ら","り","る","れ","ろ","りゃ","りゅ","りょ"],
-            ["わ","ゐ","う","ゑ","を","うぃ","うぇ","うぉ"],
+            ["わ","うぃ","う","うぇ","を","うゃ","うゅ","うょ"],
             ["が","ぎ","ぐ","げ","ご","ぎゃ","ぎゅ","ぎょ"],
-            ["だ","ぢ","で","づ","ど","てぃ","でゅ","でぃ"],
+            ["だ","ぢ","づ","で","ど","でゃ","でゅ","でょ"],
             ["ざ","じ","ず","ぜ","ぞ","じゃ","じゅ","じょ"],
             ["ば","び","ぶ","べ","ぼ","びゃ","びゅ","びょ"],
             ["ぱ","ぴ","ぷ","ぺ","ぽ","ぴゃ","ぴゅ","ぴょ"],
@@ -96,24 +105,12 @@ def lookup(key):
 
         if not Ys and not Conso and not Vowel:
             output = ""
-        elif かな == "dyou":
-            output = "でい"
-        elif かな == "dei":
-            output = "でぃ"
-        elif かな == "dyuu":
-            output = "てぃ"
         else:
             output = kana[ConsonantOrder.index(Consonants[listconsonant.index(Conso)])][searchVowel(Ys + Vowel)]
             if searchVowel2(Ys + Vowel) != 99:
                 output += kana[0][searchVowel2(Ys + Vowel) + 1]
-            if output == "うぇう":
-                output = ""
-            elif output == "うぉう":
-                output = ""
-            elif output == "でゅう":
-                output = ""
-            elif output == "でぃう":
-                output = ""
+            if かな in excepts_in:
+                output = excepts_out[excepts_in.index(かな)]
 
         print(output)
         return output
