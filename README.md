@@ -16,8 +16,8 @@ After installing this plugin, you need to turn it on in Plover:
 1  2  3  4  5  6  7  8  9  0
  *  K  S  I  U  U  I  S  K  *
   Y  T  N  A  O  O  A  N  T  Y
-      -  -  t  k  k  t  -  -
-              n     n             
+   -  -  t  k  #  k  t  -  -
+           n        n             
 ```
 which originally look like
 ```
@@ -25,7 +25,7 @@ which originally look like
  q  w  e  r  t  y  u  i  o  p 
   a  s  d  f  g  h  j  k  l  ;
    z  x  c  v  b  n  m  ,  .  
-            space  enter   
+          space  enter   
 ```
 ## To Learn Theory
 
