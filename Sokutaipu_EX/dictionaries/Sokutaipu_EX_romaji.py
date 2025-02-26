@@ -50,7 +50,7 @@ def lookup(key):
                   "fu","fyuu","fyou","faa","fai","fae","fii","fui","fuu","fei","foi","fou","foo"]
     excepts_out = ["nu","ni","nyou","nyuu",
                    "u","yaa","iu","yone","ee","we","ii","ui","uu",
-                   "thi","de","du","tye","sye","dhi","dei","zye","zuxi",
+                   "thi","de","du","tye","sye","dhi","dei","zye","di",
                    "vu","qa","qo","","","","","","","","","",""]
 
     if LeftVowel not in listvowel:
