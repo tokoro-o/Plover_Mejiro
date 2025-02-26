@@ -36,7 +36,7 @@ def lookup(key):
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
     Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","x","b","f"]
-    listconsonant = ["","T","K","N","S","NK","NT","NS","TS","KS","KT","NKT","NTS","NKTS","NKS","KTS"]
+    listconsonant = ["","T","K","N","S","KN","TN","NS","TS","KS","TK","TKN","TNS","TKNS","KNS","TKS"]
 
     #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
     #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
