@@ -7,7 +7,7 @@
   "#-O": "{#Control_L(Home)}{^}",
   "#-Y": "{#Control_L(End)}{^}",
   "*#*": "{PLOVER:TOGGLE}",
-  "#*": "{PLOVER:TOGGLE_DICT:!plover_sokutaipu_ex_romaji.py,!plover_sokutaipu_ex_kana.py}",
+  "#*": "{PLOVER:TOGGLE_DICT:!sokutaipu_ex_romaji.py,!sokutaipu_ex_kana.py}",
   "#" : "=repeat_last_translation",
   "*KSI*KSI": "{^\n\n^}",
   "*KSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
