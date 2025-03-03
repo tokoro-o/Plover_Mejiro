@@ -14,7 +14,7 @@ NUMBER_KEY = None
 
 NUMBERS = {}
 
-UNDO_STROKE_STENO = ('*-')
+UNDO_STROKE_STENO = ('-O')
 
 ORTHOGRAPHY_RULES = []
 
@@ -34,10 +34,10 @@ KEYMAPS = {
         'I-' : 'r',
         'O-' : 'g',
         'U-' : 't',
-        't-' : 'c',
-        'k-' : 'v',
+        't-' : 'v',
+        'k-' : 'b',
         'n-' : 'space',
-        '#'  : 'b',
+        '#'  : 'c',
         '-*' : ('p','[',']'),
         '-Y' : ';',
         '-T' : 'l',
@@ -68,4 +68,4 @@ KEYMAPS = {
 
 
 DICTIONARIES_ROOT = 'asset:Sokutaipu_EX:dictionaries'
-DEFAULT_DICTIONARIES = ('commands_for_Sokutaipu_EX.json','Sokutaipu_EX_kana.py')
+DEFAULT_DICTIONARIES = ('Sokutaipu_EX_kana.py','Sokutaipu_EX_romaji.py','commands_for_Sokutaipu_EX.json')
