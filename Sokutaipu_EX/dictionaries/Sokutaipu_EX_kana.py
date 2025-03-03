@@ -7,7 +7,7 @@ def lookup(key):
     assert len(key) <= LONGEST_KEY
     stroke = key[0]
 
-    if stroke == "*" or stroke == "*-*" or stroke == "-*" or stroke == "*-" or stroke == "#":
+    if stroke == "#":
         print("key error*")
         raise KeyError
     
@@ -33,6 +33,7 @@ def lookup(key):
     print("RightAsterisk\tRightConsonant\tRightVowel\tRightParticle")
     print(RightAsterisk + "\t\t" + RightConsonant + "\t\t" + RightVowel + "\t\t" + RightParticle)
 
+    print(stroke)
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
     Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","x","b","f"]
@@ -44,14 +45,16 @@ def lookup(key):
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
     firstvowel = [["A","YA","YOU","AIO"],["I","YIU"],["","YU","YAIO"],["AI","YAI"],["O","AO","YO","YAO"],["U"],["OU","IU"],["Y","YI"]]# a,i,u,e,o,ya,yu,yo
-    secondvowel = [["YU","YA","YIU","YO","YAI"],["AO","Y","IU","YAIO"],["YOU"],["YAO"]]# i,u,e,o
+    secondvowel = [["AIO"],["YU","YA","YIU","YO","YAI"],["AO","Y","IU","YAIO"],["YOU"],["YAO"]]# a,i,u,e,o
     ConsonantOrder = ["","k","s","t","n","h","m","r","w","g","d","z","b","p","f","x"]
 
     excepts_in = ["ni","nu","nyuu","nyou",
+                  "mi","mu",
                   "wya","wyu","wyo","wyuu","wyou","wii","wui","wuu",
                   "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
                   "fu","fyuu","fyou","faa","fai","fae","fii","fui","fuu","fei","foi","fou","foo"]
     excepts_out = ["ぬ","に","にょう","にゅう",
+                   "む","み",
                    "やあ","いう","よね","ええ","うぇ","いい","うい","うう",
                    "てぃ","で","づ","ちぇ","しぇ","でぃ","でい","じぇ","ぢ",
                    "ヴ","くぁ","くぉ","","","","","","","","","",""]
@@ -78,13 +81,13 @@ def lookup(key):
     if RightVowel not in listvowel:
          RightVowel = listvowel[9]
     def searchVowel(Vowel):
-        for i in range(8):
+        for i in range(len(firstvowel)):
             if Vowel in firstvowel[i]:
                 answer = i
         return answer
     def searchVowel2(Vowel):
         answer = 99
-        for i in range(4):
+        for i in range(len(secondvowel)):
             if Vowel in secondvowel[i]:
                 answer = i
         if answer == 99:
@@ -108,7 +111,7 @@ def lookup(key):
         else:
             output = kana[ConsonantOrder.index(Consonants[listconsonant.index(Conso)])][searchVowel(Ys + Vowel)]
             if searchVowel2(Ys + Vowel) != 99:
-                output += kana[0][searchVowel2(Ys + Vowel) + 1]
+                output += kana[0][searchVowel2(Ys + Vowel)]
             if かな in excepts_in:
                 output = excepts_out[excepts_in.index(かな)]
 
@@ -127,15 +130,18 @@ def lookup(key):
     listLParticle = ["","}{#Space}{","}{#F6}{","}{#F7}{","}{#F8}{","}{#F9}{","}{#F10}{","}{#F10}{#F10}{"]
     listRParticle = ["","}{#Return}{",".",",","?",".}{#Return}{",",}{#Return}{","!"]
 
-    語尾 = ["の","んな","うし","ちら","っち","ういう","こ","れ"]
+    語尾 = ["の","んな","う","ちら","っち","ういう","こ","れ"]
     こそあど = ["こ","そ","あ","ど"]
 
-    助詞 = ["","の","で","が","を","に","は","も"]
-    めいし = ["と","た","ろ","き","も","は","に","ほ","よう"]
-    名詞 = ["こと","ため","ところ","とき","もの","はなし","なに","ほう","よう"]
+    あin = ["あこ","あういう","あう"]
+    あout = ["あそこ","ああいう","ああ"]
 
-    どうし = ["","い","て","る","く","す","な","み","だ","で","ゆ","げ","さ","う","か"]
-    動詞 = [["","ない","やった","ます","ました","って","ません","なかった"],
+    助詞 = ["","の","で","が","を","に","は","も"]
+    めいし = ["と","た","ろ","き","も","は","に","ほ","よう","げ"]
+    名詞 = ["こと","ため","ところ","とき","もの","はなし","なに","ほう","よう","げんいん"]
+
+    どうし = ["","い","て","る","く","す","な","み","だ","で","ゆ","さ","う","か"]
+    動詞 = [["です","ない","でした","ます","ました","って","ません","なかった"],
           ["いる","いない","いた","います","いました","いて","いません","いうこと"],
           ["ている","ていない","ていた","ています","ていました","ていて","ていません","てい"],
           ["ある","ない","あった","あります","ありました","あって","ありません","あり"],
@@ -143,44 +149,35 @@ def lookup(key):
           ["する","しない","した","します","しました","して","しません","し"],
           ["なる","ならない","なった","なります","なりました","なって","なりません","なり"],
           ["みる","みない","みた","みます","みました","みて","みません","み"],
-          ["です","ではない","だった","であります","でした","であって","ではありません","であり"],
+          ["である","ではない","だった","であります","でした","であって","ではありません","であり"],
           ["できる","できない","できた","できます","できました","できて","できません","でき"],
           ["いう","いわない","いった","いいます","いいました","いって","いいません","いい"],
-          ["あげる","あげない","あげた","あげます","あげました","あげて","あげません","あげ"],
           ["させる","させない","させた","させます","させました","させて","させません","させ"],
           ["おもう","おもわない","おもった","おもいます","おもいました","おもって","おもいません","おもい"],
           ["かんがえる","かんがえない","かんがえた","かんがえます","かんがえました","かんがえて","かんがえません","かんがえ"]]
     
-    if LeftAsterisk and (resultL or LeftParticle):
-            if resultL in こそあど:
-                resultL += 語尾[listParticle.index(LeftParticle)]
-                if resultL == "あこ":
-                    resultL == "あそこ"
-                elif resultL == "あういう":
-                    resultL == "ああいう"
-                elif resultL == "あうし":
-                    resultL == "ああし"
-            elif resultL in どうし:
+    if LeftAsterisk:
+            if resultL in どうし:
                 resultL = 動詞[どうし.index(resultL)][listParticle.index(LeftParticle)]
             elif resultL in めいし:
                 resultL = 名詞[めいし.index(resultL)] + 助詞[listParticle.index(LeftParticle)]
                 if resultL == "ようが":
                     resultL = "ような"
-    if RightAsterisk and (resultR or RightParticle):
-            if resultR in こそあど:
-                resultR += 語尾[listParticle.index(RightParticle)]
-                if resultR == "あこ":
-                    resultR == "あそこ"
-                elif resultR == "あういう":
-                    resultR == "ああいう"
-                elif resultR == "あうし":
-                    resultR == "ああし"
-            elif resultR in どうし:
+            elif resultL in こそあど:
+                resultL += 語尾[listParticle.index(LeftParticle)]
+                if resultL in あin:
+                    resultL = あout[あin.index(resultL)]
+    if RightAsterisk:
+            if resultR in どうし:
                 resultR = 動詞[どうし.index(resultR)][listParticle.index(RightParticle)]
             elif resultR in めいし:
                 resultR = 名詞[めいし.index(resultR)] + 助詞[listParticle.index(RightParticle)]
                 if resultR == "ようが":
                     resultR = "ような"
+            elif resultR in こそあど:
+                resultR += 語尾[listParticle.index(RightParticle)]
+                if resultR in あin:
+                    resultR = あout[あin.index(resultR)]
     
     #LeftParticleになにかあって左の指の入力もあるとき
     if not LeftAsterisk and LeftParticle and (resultL or resultR):
@@ -202,7 +199,7 @@ def lookup(key):
     if not resultL and resultR and not LeftParticle:
         print("右手略語")
         return ""
-    elif (resultL or resultR) and "#" in stroke:
+    elif (resultL or resultR) and "#" in MiddleHyphen:
         print("{^" + result * 2 + "^}")
         return "{^" + result * 2 + "^}"
     else:

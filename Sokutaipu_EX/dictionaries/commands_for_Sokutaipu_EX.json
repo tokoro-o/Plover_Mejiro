@@ -10,13 +10,15 @@
   "KSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
   "*#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
 
-  "-O":"{#BackSpace}","-AO":"{#BackSpace}{#BackSpace}",
-  "-YO":"{#Delete}","-YAO":"{#Delete}{#Delete}",
+  "-O":"=undo","-AO":"{#BackSpace}",
+  "-YO":"{^}{#Control_L(z)}{^}","-YAO":"{^}{#Control_L(A)}{#BackSpace}",
+
+  "-Y":"{#Delete}",
 
                        "-S":"{^}{#Up}{^}",
   "-A":"{^}{#Left}{^}","-N":"{^}{#Down}{^}","-T":"{^}{#Right}{^}",
                 "-YS":"{^↑^}",
-  "-YA":"{^←^}","-YN":"{^↓^}","-YT":"{^→^}",
+  "-YA":"{^}{#SHIFT(LEFT)}{^}","-YN":"{^↓^}","-YT":"{^}{#SHIFT(RIGHT)}{^}",
 
   "-I":"{^}{#Control_L(Home)}{^}","-K":"{^}{#Control_L(End)}{^}",
 

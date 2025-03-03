@@ -7,7 +7,7 @@ def lookup(key):
     assert len(key) <= LONGEST_KEY
     stroke = key[0]
 
-    if stroke == "*" or stroke == "*-*" or stroke == "-*" or stroke == "*-" or stroke == "#":
+    if stroke == "#":
         print("key error*")
         raise KeyError
 
@@ -96,12 +96,12 @@ def lookup(key):
     名詞 = ["koto","tame","tokoro","toki","mono","hanasi"]
 
     どうし = ["","i","su","a","na","da","de","yu"]
-    動詞 = [["","nai","ta","masu","masita","nakaxtuta","masexn","masexndesita"],
+    動詞 = [["desu","nai","ta","masu","masita","nakaxtuta","masexn","masexndesita"],
           ["iru","inai","ita","imasu","imasita","inakaxtuta","imasexn","imasexndesita"],
           ["suru","sinai","sita","simasu","simasita","sinakaxtuta","simasexn","simasexndesita"],
           ["aru","nai","axtuta","arimasu","arimasita","nakaxtuta","arimasexn","arimasexndesita"],
           ["naru","naranai","naxtuta","narimasu","nasimasita","naranakaxtuta","narimasexn","narimasexndesita"],
-          ["da","dehanai","daxtuta","desu","desita","dehanakaxtuta","dehaarimasexn","dehaarimasexndesita"],
+          ["dearu","dehanai","daxtuta","desu","desita","dehanakaxtuta","dehaarimasexn","dehaarimasexndesita"],
           ["dekiru","dekinai","dekita","dekimasu","dekimasita","dekinakaxtuta","dekimasexn","dekimasexndesita"],
           ["iu","iwanai","ixtuta","iimasu","iimasita","iwanakaxtuta","iimasexn","iimasexndesita"]]
     
