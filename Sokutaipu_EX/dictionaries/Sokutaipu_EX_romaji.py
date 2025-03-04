@@ -45,13 +45,15 @@ def lookup(key):
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
     
     excepts_in = ["ni","nu","nyuu","nyou",
+                  "mi","mu",
                   "wu","wya","wyu","wyo","wyuu","wyou","wii","wui","wuu",
                   "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
-                  "fu","fyuu","fyou","faa","fai","fae","fii","fui","fuu","fei","foi","fou","foo"]
+                  "fu","fyuu","fyou"]
     excepts_out = ["nu","ni","nyou","nyuu",
+                   "mu","mi",
                    "u","yaa","iu","yone","ee","we","ii","ui","uu",
                    "thi","de","du","tye","sye","dhi","dei","zye","di",
-                   "vu","qa","qo","","","","","","","","","",""]
+                   "vu","qa","qo"]
 
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
