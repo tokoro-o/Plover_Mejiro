@@ -10,8 +10,16 @@
   "KSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
   "*#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
 
+  "n-": "{^}{#Space}{^}","-n": "{^}{#Return}{^}","-Yn": "{^}{#Return}{#Return}{^}","n-n": "{^}{#Space}{#Return}{^}",
+  "-*": "{^.}{#Space}{#Return}{^}","-*n": "{^.}{#Space}{#Return}{#Return}{^}",
+  "-*k": "{^,}{#Space}{#Return}{^}","-Yk": "{^,}{#Return}{^}",
+  "-*t": "{^.}{#Space}{#Return}{^}","-Yt": "{^.}{#Return}{^}",
+  "*-*": "{^です.}{#Space}{#Return}{^}","*-*n": "{^です.}{#Space}{#Return}{#Return}{^}",
+  "A-A": "{^}{#Return}{#Return}{^}","An-A": "{^}{#Space}{#Return}{#Return}{^}","An-An": "{^}{#Space}{#Return}{#Return}{#Return}{^}",
+
   "-O":"=undo","-AO":"{#BackSpace}",
-  "-YO":"{^}{#Control_L(z)}{^}","-YAO":"{^}{#Control_L(A)}{#BackSpace}",
+  "-YO":"{^}{#Control_L(z)}{^}","-YAO":"{^}{#Control_L(A)}{^}",
+  "-YU":"{^}{#Control_L(x)}{^}","-YI":"{^}{#Control_L(c)}{^}","-YK":"{^}{#Control_L(v)}{^}",
 
   "-Y":"{#Delete}",
 
@@ -21,6 +29,8 @@
   "-YA":"{^←^}","-YN":"{^↓^}","-YT":"{^→^}",
 
   "-I":"{^}{#Control_L(Home)}{^}","-K":"{^}{#Control_L(End)}{^}",
+
+  "TN-KS": "{^?^}","KS-TN": "{^!^}",
 
   "-SI":"{^(^}","-YSI":"{^<^}","-KS":"{^)^}","-YKS":"{^>^}",  
   "-KSI":"{^()^}{#Left}{^}","-YKSI":"{^<>^}{#Left}{^}",
@@ -34,7 +44,7 @@
   "-TSA":"{^^^}","-YTSA":"{^^^^}{#Left}{^}",
   
   "-KSA":"{^~^}","-YKSA":"{^=^}",
-  "-TNI":"{^…^}","-YTNI":"{^・^}",
+  "-TNI":"{^…^}","-YTNI":"{^-^}",
 
   "-TKS":"{^々^}","-YTKS":"{^ヶ^}",
   "-KNS":"{^\\^}","-YKNS":"{^＄^}",
@@ -44,5 +54,6 @@
   "-NS":"{^:^}","-YNS":"{^;^}",
   "-TK":"{^※^}","-YTK":"{^*^}",
   "-TS":"{^\"^}","-YTS":"{^'^}",
-  "-KN":"{^/^}","-YKN":"{^〆^}"
+  "-KN":"{^/^}","-YKN":"{^〆^}",
+  "-AI":"{^・^}","-YAI":"{^○^}"
 }

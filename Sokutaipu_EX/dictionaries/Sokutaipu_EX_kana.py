@@ -50,12 +50,12 @@ def lookup(key):
 
     excepts_in = ["ni","nu","nyuu","nyou",
                   "mi","mu",
-                  "wya","wyu","wyo","wyuu","wyou","wii","wui","wuu",
+                  "wya","wyu","wyo","wyuu","wyou","wii","wui","wuu","wei",
                   "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
                   "fu","fyuu","fyou"]
     excepts_out = ["ぬ","に","にょう","にゅう",
                    "む","み",
-                   "やあ","いう","よね","ええ","うぇ","いい","うい","うう",
+                   "やあ","いう","よね","ええ","うえ","ゐ","あお","うぅ","ゑ",
                    "てぃ","で","づ","ちぇ","しぇ","でぃ","でい","じぇ","ぢ",
                    "ヴ","くぁ","くぉ"]
 
@@ -127,10 +127,12 @@ def lookup(key):
 
     listParticle = ["","n","t","k","tk","tn","kn","tkn"]
     listSecondWord = ["","ん","つ","く","っ","ち","き","ー"]
-    listFn = ["","}{#Return}{",".",",","?",".}{#Return}{",",}{#Return}{","}{#Return}{#Return}{"]
-    listLParticle = ["","","","","","","",""]
-    listRParticle = ["","}{#Return}{",".",",","?",".}{#Return}{",",}{#Return}{","?}{#Return}{"]
+    listLParticle = ["","て","は","の","と","か","に","へ"]
+    listRParticle = ["","、","." ,"," ,"を","で","が","も"]
 
+    助詞in = ["は、","の、","と、","か、","に、","へ、","て.","は.","の.","と.","か.","に.","へ.","はを","へを","はで","へで","にが","へが","はも"]
+    助詞out = ["ては","ての","を,","で,","が,","も,","ては","では","のは","とは","かは","には","へは","をは","をも","では","でも","での","もが","もは"]
+    
     語尾 = ["れ","の","う","ちら","っち","ういう","こ","んな"]
     こそあど = ["こ","そ","あ","ど"]
 
@@ -138,10 +140,12 @@ def lookup(key):
     あout = ["あそこ","ああいう","ああ"]
 
     助詞 = ["","の","で","が","を","に","は","も"]
-    めいし = ["と","か","た","よ","ろ","き","も","に","は","ひ","ふ","ほ","よう","げ"]
-    名詞 = ["こと","から","ため","より","ところ","とき","もの","なに","はなし","ひと","ふつう","ほう","よう","げんいん"]
+    めいし = ["と","か","さ","た","よ","ろ","き","も","に","だ","は","ひ","ふ","ほ","よう","げ"]
+    名詞 = ["こと","から","さいきん","ため","より","ところ","とき","もの","なに","だけ","はなし","ひと","ふつう","ほう","よう","げんいん"]
 
-    どうし = ["","い","て","る","く","す","な","み","だ","で","ゆ","さ","う"]
+    めいしin = ["からが","ためが","なにで","ようが"]
+    めいしout = ["だから","たとえば","なんで","ような"]
+    どうし = ["","い","て","る","く","す","な","み","で","ゆ","さ","う"]
     動詞 = [["です","ない","でした","ます","ました","って","ません","なかった"],
           ["いる","いない","いた","います","いました","いて","いません","いらっしゃって"],
           ["ている","ていない","ていた","ています","ていました","ていて","ていません","てい"],
@@ -150,7 +154,6 @@ def lookup(key):
           ["する","しない","した","します","しました","して","しません","すること"],
           ["なる","ならない","なった","なります","なりました","なって","なりません","なり"],
           ["みる","みない","みた","みます","みました","みて","みません","みること"],
-          ["である","ではない","だった","であります","でした","であって","ではありません","であり"],
           ["できる","できない","できた","できます","できました","できて","できません","でき"],
           ["いう","いわない","いった","いいます","いいました","いって","いいません","いうこと"],
           ["させる","させない","させた","させます","させました","させて","させません","させ"],
@@ -161,8 +164,8 @@ def lookup(key):
                 resultL = 動詞[どうし.index(resultL)][listParticle.index(LeftParticle)]
             elif resultL in めいし:
                 resultL = 名詞[めいし.index(resultL)] + 助詞[listParticle.index(LeftParticle)]
-                if resultL == "ようが":
-                    resultL = "ような"
+                if resultL in めいしin:
+                    resultL = めいしout[めいしin.index(resultL)]
             elif resultL in こそあど:
                 resultL += 語尾[listParticle.index(LeftParticle)]
                 if resultL in あin:
@@ -172,8 +175,8 @@ def lookup(key):
                 resultR = 動詞[どうし.index(resultR)][listParticle.index(RightParticle)]
             elif resultR in めいし:
                 resultR = 名詞[めいし.index(resultR)] + 助詞[listParticle.index(RightParticle)]
-                if resultR == "ようが":
-                    resultR = "ような"
+                if resultR in めいしin:
+                    resultR = めいしout[めいしin.index(resultR)]
             elif resultR in こそあど:
                 resultR += 語尾[listParticle.index(RightParticle)]
                 if resultR in あin:
@@ -184,18 +187,18 @@ def lookup(key):
         resultL += listSecondWord[listParticle.index(LeftParticle)]
         print(resultL)
     #RightParticleになにかあって右の指の入力もあるとき
-    if not RightAsterisk and RightParticle and (resultR or resultL and LeftParticle):
+    if not RightAsterisk and RightParticle and (resultR or resultL and LeftParticle or LeftAsterisk):
         resultR += listSecondWord[listParticle.index(RightParticle)]
         print(resultR)
     elif  not resultL and not resultR:#どちらの指にも入力が無いとき
-        if LeftParticle is None or LeftParticle == "n":
-            if LeftParticle == "n":
-                result = "}{#Space}{"
-            result += listFn[listParticle.index(RightParticle)]
-        elif not Numbers:
+        if not Numbers:
             result = listLParticle[listParticle.index(LeftParticle)] + listRParticle[listParticle.index(RightParticle)]
+            if result in 助詞in:
+                result = 助詞out[助詞in.index(result)]
         else:
             result = Numbers
+            if "#" in MiddleHyphen:
+                result = "}{#F" + Numbers + "}{"
 
     if result == "":
         result = resultL + resultR

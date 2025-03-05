@@ -46,12 +46,12 @@ def lookup(key):
     
     excepts_in = ["ni","nu","nyuu","nyou",
                   "mi","mu",
-                  "wu","wya","wyu","wyo","wyuu","wyou","wii","wui","wuu",
+                  "wu","wya","wyu","wyo","wyuu","wyou","wii","wui","wuu","wei",
                   "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
                   "fu","fyuu","fyou"]
     excepts_out = ["nu","ni","nyou","nyuu",
                    "mu","mi",
-                   "u","yaa","iu","yone","ee","we","ii","ui","uu",
+                   "u","yaa","iu","yone","ee","ue","wi","ao","uxu","we",
                    "thi","de","du","tye","sye","dhi","dei","zye","di",
                    "vu","qa","qo"]
 
