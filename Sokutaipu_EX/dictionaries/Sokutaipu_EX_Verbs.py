@@ -55,8 +55,8 @@ def lookup(key):
                 flag = i
         return flag
     
-    def 修正(texts):
-        texts = texts.replace('んて', 'んで').replace('んた', 'んだ').replace('あらな', 'な').replace('すろ', 'しろ').replace('しず', 'せず')
+    def 修正(result):
+        return result.replace('んて', 'んで').replace('んた', 'んだ').replace('あらな', 'な').replace('すろ', 'しろ').replace('しず', 'せず')
     
     kana = [["わ","い","う","え","お","っ"],#0
             ["か","き","く","け","こ","い"],#1
@@ -227,7 +227,12 @@ def lookup(key):
                 ]
                 #ストローク，語幹，活用形
     助詞リスト = [["","",2],
+                ["TKNS","",1],
+                ["TKNSt",".",1],
+                ["TKNSk",",",1],
                 ["TAI","て",7],
+                ["TAIt","て.",7],
+                ["TAIk","て,",7],
                 ["KS",".",2],
                 ["Yt","たでしょう",7],
                 ["Yk","ましょう",1],
@@ -327,7 +332,7 @@ def lookup(key):
 
         result += 活用[1]
 
-        修正(result)
+        result = 修正(result)
     elif not 補助index:
         result = 動詞[1] + kana[動詞[2]][動詞[3][助詞[2]]]
 
@@ -342,7 +347,7 @@ def lookup(key):
         
         result += 助詞[1]
 
-        修正(result)
+        result = 修正(result)
     else:
         補助動詞 = 補助動詞リスト[補助index]
         if 補助動詞[0] == "NA":
@@ -356,6 +361,6 @@ def lookup(key):
         
         if 活用[2] == 2 and 補助動詞[3] != 五段:#五段以外の終止形
             result += "る"
-        修正(result)
+        result = 修正(result)
     print("{^" + result + "^}")
     return "{^" + result + "^}"
