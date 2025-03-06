@@ -27,8 +27,6 @@ def lookup(key):
     RightParticle = regex_groups.group(11)
     Numbers = regex_groups.group(12)
 
-    listParticle = ["","n","t","k","tk","tn","kn","tkn"]
-                    #ない,た,ます,ました,なかった,ません,ませんでした
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
     result = ""
     if LeftVowel not in listvowel:
@@ -50,8 +48,8 @@ def lookup(key):
     if not LeftAsterisk:
         print("key error*")
         raise KeyError
-    def 検索(stroke,list):
-        flag = None
+    def 検索(stroke,list,error):
+        flag = error
         for i in range(len(list)):
             if list[i][0] == stroke:
                 flag = i
@@ -268,17 +266,11 @@ def lookup(key):
     #「た・て・ては・ての・ちゃ・せる・られる・ば・せよ・ない・なきゃ・ず・ぬ・ねば・ん・ざる・ざるをえない・ます・ました・まして・ません・ませんでした・よう／いれる・あげる・もうしあげる・くださる・いただく・だす・なおす・ながら・すぎる・つづける」
     #  動詞*(助動詞／補助動詞／名詞)*(丁寧／過去／否定)*(、。)
 
-    動詞index = 検索(LeftStroke,動詞リスト)
-    助詞index = 検索(RightStroke,助詞リスト)
-    補助index = 検索(RightY + RightConsonant + RightVowel,補助動詞リスト)
-    活用index = 検索(RightParticle,活用リスト)
+    動詞index = 検索(LeftStroke,動詞リスト,0)
+    助詞index = 検索(RightStroke,助詞リスト,0)
+    補助index = 検索(RightY + RightConsonant + RightVowel,補助動詞リスト,None)
+    活用index = 検索(RightParticle,活用リスト,0)
 
-    if not 動詞index:
-        動詞index = 0
-    if not 助詞index:
-        助詞index = 0
-    if not 活用index:
-        活用index = 0
     動詞 = 動詞リスト[動詞index]
     助詞 = 助詞リスト[助詞index]
     活用 = 活用リスト[活用index]
