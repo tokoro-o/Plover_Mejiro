@@ -18,7 +18,7 @@
 
   "-O":"=undo","-AO":"{#BackSpace}","-OU":"{^}{#Control_L(shift(z))}{^}",
   "-YO":"{^}{#Control_L(z)}{^}","-YAO":"{^}{#Control_L(x)}{^}","-YOU":"{^}{#Control_L(y)}{^}",
-  "-U":"{^}{plover:set_config}{^}","-YU":"{^}{#Control_L(s)}{^}",
+  "-U":"{^}{#Control_L(s)}{^}","-YU":"{^}{plover:set_config}{^}",
   "-YI":"{^}{#Control_L(c)}{^}","-YK":"{^}{#Control_L(v)}{^}",
   "-TSAI":"{^}{#Control_L(a)}{^}","-YTSAI":"{^}{#Control_L(a)}{#BackSpace}{^}",
 
