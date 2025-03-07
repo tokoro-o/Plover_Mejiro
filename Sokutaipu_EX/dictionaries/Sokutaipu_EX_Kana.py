@@ -151,6 +151,8 @@ def lookup(key):
         else:
             result = Numbers
             if "#" in MiddleHyphen:
+                if result == 0:
+                    result = 11
                 result = "}{#F" + Numbers + "}{"
 
     if result == "":
