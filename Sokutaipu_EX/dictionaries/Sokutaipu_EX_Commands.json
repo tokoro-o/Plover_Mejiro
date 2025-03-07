@@ -16,9 +16,11 @@
   "*-*": "{^です.}{#Space}{#Return}{^}","*-*n": "{^です.}{#Space}{#Return}{#Return}{^}",
   "A-A": "{^}{#Return}{#Return}{^}","An-A": "{^}{#Space}{#Return}{#Return}{^}","An-An": "{^}{#Space}{#Return}{#Return}{#Return}{^}",
 
-  "-O":"=undo","-AO":"{#BackSpace}",
-  "-YO":"{^}{#Control_L(z)}{^}","-YAO":"{^}{#Control_L(a)}{^}","-U":"{^}{#Control_L(s)}{^}",
-  "-YU":"{^}{#Control_L(x)}{^}","-YI":"{^}{#Control_L(c)}{^}","-YK":"{^}{#Control_L(v)}{^}",
+  "-O":"=undo","-AO":"{#BackSpace}","-OU":"{^}{#Control_L(shift(z))}{^}",
+  "-YO":"{^}{#Control_L(z)}{^}","-YAO":"{^}{#Control_L(x)}{^}","-YOU":"{^}{#Control_L(y)}{^}",
+  "-U":"{^}{plover:set_config}{^}","-YU":"{^}{#Control_L(s)}{^}",
+  "-YI":"{^}{#Control_L(c)}{^}","-YK":"{^}{#Control_L(v)}{^}",
+  "-TSAI":"{^}{#Control_L(a)}{^}","-YTSAI":"{^}{#Control_L(a)}{#BackSpace}{^}",
 
   "-Y":"{#Delete}",
 
@@ -31,7 +33,7 @@
 
   "TN-KS": "{^?^}","KS-TN": "{^!^}",
 
-  "-SI":"{^(^}","-YSI":"{^<^}","-KS":"{^)^}","-YKS":"{^>^}",  
+  "-SI":"{^(^}","-YSI":"{^<^}","-KS":"{^)^}","-YKS":"{^>^}",
   "-KSI":"{^()^}{#Left}{^}","-YKSI":"{^<>^}{#Left}{^}",
 
   "-NA":"{^[^}","-YNA":"{^\\{^}","-TN":"{^]^}","-YTN":"{^\\}^}",  
