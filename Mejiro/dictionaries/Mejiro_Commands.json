@@ -1,0 +1,84 @@
+{
+  "*#*": "{PLOVER:TOGGLE}",
+  "#*": "{PLOVER:TOGGLE_DICT:!mejiro_romaji.py,!mejiro_kana.py}",
+  "#" : "=repeat_last_translation",
+  "*KSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "*KS#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "*K#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "KS#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "KSI#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+  "*#": "{PLOVER:SWITCH_SYSTEM:English Stenotype}{#alt(shift(0))}{^}",
+
+  "n-": "{^}{#Space}{^}","-n": "{^}{#Return}{^}","-Yn": "{^}{#Return}{#Return}{^}","n-n": "{^}{#Space}{#Return}{^}",
+  "-*": "{^.}{#Space}{#Return}{^}","-*n": "{^.}{#Space}{#Return}{#Return}{^}",
+  "-*k": "{^,}{#Space}{#Return}{^}","-Yk": "{^,}{#Return}{^}",
+  "-*t": "{^.}{#Space}{#Return}{^}","-Yt": "{^.}{#Return}{^}",
+  "*-*": "{^です.}{#Space}{#Return}{^}","*-*n": "{^です.}{#Space}{#Return}{#Return}{^}",
+  "A-A": "{^}{#Return}{#Return}{^}","An-A": "{^}{#Space}{#Return}{#Return}{^}","An-An": "{^}{#Space}{#Return}{#Return}{#Return}{^}",
+
+  "-O":"=undo","-AO":"{#BackSpace}","-OU":"{^}{#Control_L(shift(z))}{^}",
+  "-YO":"{^}{#Control_L(z)}{^}","-YAO":"{^}{#Control_L(x)}{^}","-YOU":"{^}{#Control_L(y)}{^}",
+  "-U":"{^}{#Control_L(s)}{^}","-YU":"{^}{plover:set_config}{^}",
+  "-YI":"{^}{#Control_L(c)}{^}","-YK":"{^}{#Control_L(v)}{^}",
+  "-TSAI":"{^}{#Control_L(a)}{^}","-YTSAI":"{^}{#Control_L(a)}{#BackSpace}{^}",
+
+  "-Y":"{#Delete}",
+
+                       "-S":"{^}{#Up}{^}",
+  "-A":"{^}{#Left}{^}","-N":"{^}{#Down}{^}","-T":"{^}{#Right}{^}",
+                "-YS":"{^↑^}",
+  "-YA":"{^←^}","-YN":"{^↓^}","-YT":"{^→^}",
+
+  "-I":"{^}{#Control_L(Home)}{^}","-K":"{^}{#Control_L(End)}{^}",
+
+  "TN-KS": "{^?^}","KS-TN": "{^!^}",
+
+  "-SI":"{^(^}","-YSI":"{^<^}","-KS":"{^)^}","-YKS":"{^>^}",
+  "-KSI":"{^()^}{#Left}{^}","-YKSI":"{^<>^}{#Left}{^}",
+
+  "-NA":"{^[^}","-YNA":"{^\\{^}","-TN":"{^]^}","-YTN":"{^\\}^}",  
+  "-TNA":"{^[]^}{#Left}{^}","-YTNA":"{^\\{\\}^}{#Left}{^}",
+
+  "-TA":"{^][^}","-YTA":"{^\\}\\{^}",
+  "-KI":"{^)(^}","-YKI":"{^><^}",
+
+  "-TSA":"{^^^}","-YTSA":"{^^^^}{#Left}{^}",
+  
+  "-KSA":"{^=^}","-YKSA":"{^~^}",
+  "-TNO":"{^-^}","-YTNO":"{^+^}",
+  "-TNSA":"{^∆^}","-YTNSA":"{^∇^}",
+  "-KNA":"{^✓^}","-YKNA":"{^✗^}",
+
+  "-TKS":"{^々^}","-YTKS":"{^ヶ^}",
+  "-KNS":"{^\\^}","-YKNS":"{^＄^}",
+  "-TKN":"{^°^}","-YTKN":"{^♪^}",
+  "-TNS":"{^%^}","-YTNS":"{^&^}",
+  "-TKNS":"{^#^}","-YTKNS":"{^@^}",
+  "-NS":"{^:^}","-YNS":"{^;^}",
+  "-TK":"{^※^}","-YTK":"{^*^}",
+  "-TS":"{^\"^}","-YTS":"{^'^}",
+  "-KN":"{^/^}","-YKN":"{^÷^}",
+  "-AI":"{^・^}","-YAI":"{^○^}",
+  
+  "-YT/-YT":"{^⇒^}",
+  "-YA/-YT":"{^⇔^}",
+  "-KSA/-YKS":"{^≧^}",
+  "-KSA/-YSI":"{^≦^}",
+  "-YKS/-KS":"{^≫^}",
+  "-YSI/-SI":"{^≪^}",
+  "-YTK/-YKN":"{^×^}",
+  "-YTNO/-TNO":"{^±^}",
+  "-TNO/-YTNO":"{^∓^}",
+  "-KN/-YTNO":"{^∫^}",
+  "-YAI/-YAI":"{^∞^}",
+  "-YAI/-AI":"{^⊙^}",
+  "-YAI/-YTNO":"{^⊕^}",
+  "-YAI/-YTK":"{^⊗^}",
+  "-YAI/-TNO":"{^∅^}",
+  "-TNO/-TNO":"{^―^}",
+  "-AI/-AI":"{^…^}",
+  "-YKN/-YKN":"{^√^}",
+  "-TKN/-TKN":"{^℃^}",
+  "-YTKN/-YTKN":"{^♫^}",
+  "-YTKNS/-YTKNS":"{^@gmail.com^}"
+}
