@@ -1,4 +1,4 @@
-# Plover Mejiro
+# メジロ式速記(Plover Mejiro)
 
 A Japanese stenography system for Plover.
 
