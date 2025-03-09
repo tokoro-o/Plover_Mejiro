@@ -66,6 +66,5 @@ KEYMAPS = {
         }
 }
 
-
 DICTIONARIES_ROOT = 'asset:Mejiro:dictionaries'
-DEFAULT_DICTIONARIES = ('Mejiro_Commands.json','Mejiro_Verbs.json','Mejiro_Kana.py')
+DEFAULT_DICTIONARIES = ('Mejiro_Commands.json','Mejiro_Users.json','Mejiro_Verbs.py','Mejiro_Kana.py')
