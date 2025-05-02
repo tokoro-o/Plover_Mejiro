@@ -11,29 +11,25 @@ def lookup(key):
         print("key error*")
         raise KeyError
     
-    regex = re.compile(r"(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(1?2?3?4?5?6?7?8?9?0?)")
+    regex = re.compile(r"(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)")
     regex_groups = re.search(regex, stroke)
 
-    LeftAsterisk = regex_groups.group(1)
-    LeftY = regex_groups.group(2)
-    LeftConsonant = regex_groups.group(3)
-    LeftVowel = regex_groups.group(4)
-    LeftParticle = regex_groups.group(5)
-    MiddleHyphen = regex_groups.group(6)
-    RightAsterisk = regex_groups.group(7)
-    RightY = regex_groups.group(8)
-    RightConsonant = regex_groups.group(9)
-    RightVowel = regex_groups.group(10)
-    RightParticle = regex_groups.group(11)
-    Numbers = regex_groups.group(12)
+    LeftY = regex_groups.group(1)
+    LeftConsonant = regex_groups.group(2)
+    LeftVowel = regex_groups.group(3)
+    LeftParticle = regex_groups.group(4)
+    Hyphen = regex_groups.group(5)
+    Asterisk = regex_groups.group(6)
+    RightY = regex_groups.group(7)
+    RightConsonant = regex_groups.group(8)
+    RightVowel = regex_groups.group(9)
+    RightParticle = regex_groups.group(10)
 
-    LeftStroke = LeftConsonant + LeftVowel + LeftParticle
-    RightStroke = RightConsonant + RightVowel + RightParticle
     print("LeftAsterisk\tLeftConsonant\tLeftVowel\tLeftParticle")
-    print(LeftAsterisk + "\t\t" + LeftConsonant + "\t\t" + LeftVowel + "\t\t" + LeftParticle)
+    print(LeftY + "\t\t" + LeftConsonant + "\t\t" + LeftVowel + "\t\t" + LeftParticle)
 
     print("RightAsterisk\tRightConsonant\tRightVowel\tRightParticle")
-    print(RightAsterisk + "\t\t" + RightConsonant + "\t\t" + RightVowel + "\t\t" + RightParticle)
+    print(RightY + "\t\t" + RightConsonant + "\t\t" + RightVowel + "\t\t" + RightParticle)
 
     print(stroke)
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
@@ -136,29 +132,45 @@ def lookup(key):
     助詞out = [".",",","ー","は、","が、","も、","でした","です","ん","のに","のに、","ので","ので、","のか","のか、","のを","のを、"]
     
     #LeftParticleになにかあって左の指の入力もあるとき
-    if not LeftAsterisk and LeftParticle and (resultL or resultR):
+    if not Asterisk and LeftParticle and (resultL or resultR):
         resultL += listSecondWord[listParticle.index(LeftParticle)]
         print(resultL)
     #RightParticleになにかあって右の指の入力もあるとき
-    if not RightAsterisk and RightParticle and (resultR or resultL and LeftParticle or LeftAsterisk):
+    if not Asterisk and RightParticle and (resultR or resultL and LeftParticle):
         resultR += listSecondWord[listParticle.index(RightParticle)]
         print(resultR)
+    if  (resultL or resultR) and not LeftParticle and RightParticle == "k" and not Hyphen and not Asterisk:#どちらの指にも入力が無いとき
+        result = ""
+        if LeftY:
+            result += "1"
+        if "K" in LeftConsonant:
+            result += "2"
+        if "S" in LeftConsonant:
+            result += "3"
+        if "I" in LeftVowel:
+            result += "4"
+        if "U" in LeftVowel:
+            result += "5"
+        if "U" in RightVowel:
+            result += "6"
+        if "I" in RightVowel:
+            result += "7"
+        if "S" in RightConsonant:
+            result += "8"
+        if "K" in RightConsonant:
+            result += "9"
+        if RightY:
+            result += "0"
+    
     elif  not resultL and not resultR:#どちらの指にも入力が無いとき
-        if not Numbers:
-            result = listLParticle[listParticle.index(LeftParticle)] + listRParticle[listParticle.index(RightParticle)]
-            if result in 助詞in:
-                result = 助詞out[助詞in.index(result)]
-        else:
-            result = Numbers
-            if "#" in MiddleHyphen:
-                if result == 0:
-                    result = 11
-                result = "}{#F" + Numbers + "}{"
+        result = listLParticle[listParticle.index(LeftParticle)] + listRParticle[listParticle.index(RightParticle)]
+        if result in 助詞in:
+            result = 助詞out[助詞in.index(result)]
 
     if result == "":
         result = resultL + resultR
 
-    if (resultL or resultR) and "#" in MiddleHyphen:
+    if (resultL or resultR) and "#" in Hyphen:
         print("{^" + result * 2 + "^}")
         return "{^" + result * 2 + "^}"
     else:

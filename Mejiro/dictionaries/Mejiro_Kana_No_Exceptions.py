@@ -10,7 +10,7 @@ def lookup(key):
     if stroke == "#":
         print("key error*")
         raise KeyError
-
+    
     regex = re.compile(r"(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)")
     regex_groups = re.search(regex, stroke)
 
@@ -31,49 +31,75 @@ def lookup(key):
     print("RightAsterisk\tRightConsonant\tRightVowel\tRightParticle")
     print(RightY + "\t\t" + RightConsonant + "\t\t" + RightVowel + "\t\t" + RightParticle)
 
+    print(stroke)
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
     Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","x","b","f"]
     listconsonant = ["","T","K","N","S","TK","TN","TS","NS","KS","KN","TKN","TNS","TKNS","TKS","KNS"]
 
+    #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
+    #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
     Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
-    
-    excepts_in = ["ni","nu","nyuu","nyou",
-                  "mi","mu",
-                  "wu","wya","wyu","wyo","wyuu","wyou","wii","wui","wuu","wei",
-                  "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
-                  "fu","fyuu","fyou"]
-    excepts_out = ["nu","ni","nyou","nyuu",
-                   "mu","mi",
-                   "u","yaa","iu","yone","ee","ue","wi","ao","uxu","we",
-                   "thi","de","du","tye","sye","dhi","dei","zye","di",
-                   "vu","qa","qo"]
+    firstvowel = [["A","YA","YOU","AIO"],["I","YIU"],["","YU","YAIO"],["AI","YAI"],["O","AO","YO","YAO"],["U"],["OU","IU"],["Y","YI"]]# a,i,u,e,o,ya,yu,yo
+    secondvowel = [["AIO"],["YU","YA","YIU","YO","YAI"],["AO","Y","IU","YAIO"],["YOU"],["YAO"]]# a,i,u,e,o
+    ConsonantOrder = ["","k","s","t","n","h","m","r","w","g","d","z","b","p","f","x"]
+
+    kana = [["あ","い","う","え","お","や","ゆ","よ"],
+            ["か","き","く","け","こ","きゃ","きゅ","きょ"],
+            ["さ","し","す","せ","そ","しゃ","しゅ","しょ"],
+            ["た","ち","つ","て","と","ちゃ","ちゅ","ちょ"],
+            ["な","に","ぬ","ね","の","にゃ","にゅ","にょ"],
+            ["は","ひ","ふ","へ","ほ","ひゃ","ひゅ","ひょ"],
+            ["ま","み","む","め","も","みゃ","みゅ","みょ"],
+            ["ら","り","る","れ","ろ","りゃ","りゅ","りょ"],
+            ["わ","うぃ","う","うぇ","を","うゃ","うゅ","うょ"],
+            ["が","ぎ","ぐ","げ","ご","ぎゃ","ぎゅ","ぎょ"],
+            ["だ","ぢ","づ","で","ど","でゃ","でゅ","でょ"],
+            ["ざ","じ","ず","ぜ","ぞ","じゃ","じゅ","じょ"],
+            ["ば","び","ぶ","べ","ぼ","びゃ","びゅ","びょ"],
+            ["ぱ","ぴ","ぷ","ぺ","ぽ","ぴゃ","ぴゅ","ぴょ"],
+            ["ふぁ","ふぃ","ヴ","ふぇ","ふぉ","ふゃ","ふゅ","ふょ"],
+            ["ぁ","ぃ","ぅ","ぇ","ぉ","ゃ","ゅ","ょ"]]
 
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
     if RightVowel not in listvowel:
          RightVowel = listvowel[9]
-
+    def searchVowel(Vowel):
+        for i in range(len(firstvowel)):
+            if Vowel in firstvowel[i]:
+                answer = i
+        return answer
+    def searchVowel2(Vowel):
+        answer = 99
+        for i in range(len(secondvowel)):
+            if Vowel in secondvowel[i]:
+                answer = i
+        if answer == 99:
+            return 99
+        else:
+            return answer
     def Make(Ys,Conso,Vowel):
 
         output = ""
-        
+        かな = Consonants[listconsonant.index(Conso)]
+
+        if Ys:
+            #Yが入力されていたら
+            かな += Vowels2[listvowel.index(Vowel)]
+        else:
+            #そうでないとき
+            かな += Vowels[listvowel.index(Vowel)]
+
         if not Ys and not Conso and not Vowel:
             output = ""
         else:
-            output = Consonants[listconsonant.index(Conso)]
+            output = kana[ConsonantOrder.index(Consonants[listconsonant.index(Conso)])][searchVowel(Ys + Vowel)]
+            if searchVowel2(Ys + Vowel) != 99:
+                output += kana[0][searchVowel2(Ys + Vowel)]
 
-            if Ys:
-                #Yが入力されていたら
-                output += Vowels2[listvowel.index(Vowel)]
-            else:
-                #そうでないとき
-                output += Vowels[listvowel.index(Vowel)]
-
-            if output in excepts_in:
-                output = excepts_out[excepts_in.index(output)]
         print(output)
         return output
 
@@ -85,12 +111,12 @@ def lookup(key):
         resultR = Make(RightY,RightConsonant,RightVowel)
 
     listParticle = ["","n","t","k","tk","tn","kn","tkn"]
-    listSecondWord = ["","nn","tsu","ku","ltu","chi","ki","-"]
-    listLParticle = ["",",","ni","no","de","to","wo","ka"]
-    listRParticle = ["",",","ha","ga","mo","ha,","ga,","mo,"]
+    listSecondWord = ["","ん","つ","く","っ","ち","き","ー"]
+    listLParticle = ["","、","に","の","で","と","を","か"]
+    listRParticle = ["","、","は","が","も","は、","が、","も、"]
 
-    助詞in = ["ha,","ga,","mo,",",ha",",ga",",mo",",ha,",",ga,",",mo,","niga","niga,","dega","dega,","kaga","kaga,","woga","woga,"]
-    助詞out = [".",",","-","ha,","ga,","mo,","desita","desu","nn","noni","noni,","node","node,","noka","noka,","nowo","nowo,"]
+    助詞in = ["は、","が、","も、","、は","、が","、も","、は、","、が、","、も、","にが","にが、","でが","でが、","かが","かが、","をが","をが、"]
+    助詞out = [".",",","ー","は、","が、","も、","でした","です","ん","のに","のに、","ので","ので、","のか","のか、","のを","のを、"]
     
     #LeftParticleになにかあって左の指の入力もあるとき
     if not Asterisk and LeftParticle and (resultL or resultR):
@@ -122,12 +148,12 @@ def lookup(key):
             result += "9"
         if RightY:
             result += "0"
-
+    
     elif  not resultL and not resultR:#どちらの指にも入力が無いとき
         result = listLParticle[listParticle.index(LeftParticle)] + listRParticle[listParticle.index(RightParticle)]
         if result in 助詞in:
             result = 助詞out[助詞in.index(result)]
-            
+
     if result == "":
         result = resultL + resultR
 

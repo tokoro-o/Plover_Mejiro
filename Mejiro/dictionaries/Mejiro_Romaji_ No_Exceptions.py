@@ -39,17 +39,6 @@ def lookup(key):
     Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
-    
-    excepts_in = ["ni","nu","nyuu","nyou",
-                  "mi","mu",
-                  "wu","wya","wyu","wyo","wyuu","wyou","wii","wui","wuu","wei",
-                  "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
-                  "fu","fyuu","fyou"]
-    excepts_out = ["nu","ni","nyou","nyuu",
-                   "mu","mi",
-                   "u","yaa","iu","yone","ee","ue","wi","ao","uxu","we",
-                   "thi","de","du","tye","sye","dhi","dei","zye","di",
-                   "vu","qa","qo"]
 
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
@@ -72,8 +61,6 @@ def lookup(key):
                 #そうでないとき
                 output += Vowels[listvowel.index(Vowel)]
 
-            if output in excepts_in:
-                output = excepts_out[excepts_in.index(output)]
         print(output)
         return output
 
