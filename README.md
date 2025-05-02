@@ -15,7 +15,7 @@ After installing this plugin, you need to turn it on in Plover:
 ```
 #  Y  K  S  I  U  U  I  S  K  Y  *
 #  Y  T  N  A  O  O  A  N  T  Y  *
-      -  -  t  k  k  t  -  -
+   -  -  -  t  k  k  t  -  -  -
                n  n             
 ```
 which originally look like
