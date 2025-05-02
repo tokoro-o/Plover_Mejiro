@@ -11,21 +11,19 @@ def lookup(key):
         print("key error*")
         raise KeyError
     
-    regex = re.compile(r"(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(1?2?3?4?5?6?7?8?9?0?)")
+    regex = re.compile(r"(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)(\-?#?)(\*?)(Y?)(T?K?N?S?)(A?I?O?U?)(t?k?n?)")
     regex_groups = re.search(regex, stroke)
 
-    LeftAsterisk = regex_groups.group(1)
-    LeftY = regex_groups.group(2)
-    LeftConsonant = regex_groups.group(3)
-    LeftVowel = regex_groups.group(4)
-    LeftParticle = regex_groups.group(5)
-    MiddleHyphen = regex_groups.group(6)
-    RightAsterisk = regex_groups.group(7)
-    RightY = regex_groups.group(8)
-    RightConsonant = regex_groups.group(9)
-    RightVowel = regex_groups.group(10)
-    RightParticle = regex_groups.group(11)
-    Numbers = regex_groups.group(12)
+    LeftY = regex_groups.group(1)
+    LeftConsonant = regex_groups.group(2)
+    LeftVowel = regex_groups.group(3)
+    LeftParticle = regex_groups.group(4)
+    Hyphen = regex_groups.group(5)
+    Asterisk = regex_groups.group(6)
+    RightY = regex_groups.group(7)
+    RightConsonant = regex_groups.group(8)
+    RightVowel = regex_groups.group(9)
+    RightParticle = regex_groups.group(10)
 
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
     result = ""
@@ -37,15 +35,15 @@ def lookup(key):
     LeftStroke = LeftY + LeftConsonant + LeftVowel + LeftParticle
     RightStroke = RightY + RightConsonant + RightVowel
 
-    print("LeftAsterisk\tLeftConsonant\tLeftVowel\tLeftParticle")
-    print(LeftAsterisk + "\t\t" + LeftStroke)
+    print("LeftConsonant\tLeftVowel\tLeftParticle")
+    print(LeftStroke)
 
-    print("RightAsterisk\tRightConsonant\tRightVowel\tRightParticle")
-    print(RightAsterisk + "\t\t" + RightStroke)
+    print("RightConsonant\tRightVowel\tRightParticle")
+    print(RightStroke)
 
     print(stroke)
 
-    if not LeftAsterisk:
+    if not Asterisk:
         print("key error*")
         raise KeyError
     def 検索(stroke,list,error):
@@ -432,7 +430,5 @@ def lookup(key):
             result += "る"
         result = 修正(result)
 
-    if RightAsterisk:
-        result += ".}{#Space}{#Return}{"
     print("{^" + result + "^}")
     return "{^" + result + "^}"
