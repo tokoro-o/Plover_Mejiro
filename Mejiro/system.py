@@ -1,12 +1,10 @@
 KEYS = (
-'*-', 'Y-', 'T-', 'K-', 'N-', 'S-', 'A-', 'I-', 'O-', 'U-', 't-', 'k-', 'n-',
-'#',
-'-*', '-Y', '-T', '-K', '-N', '-S', '-A', '-I', '-O', '-U', '-t', '-k', '-n',
-'-1','-2','-3','-4','-5',
-'-6','-7','-8','-9','-0',
+'Y-', 'T-', 'K-', 'N-', 'S-', 'A-', 'I-', 'O-', 'U-', 't-', 'k-', 'n-',
+'#','*',
+'-Y', '-T', '-K', '-N', '-S', '-A', '-I', '-O', '-U', '-t', '-k', '-n',
 )
 
-IMPLICIT_HYPHEN_KEYS = ('#')
+IMPLICIT_HYPHEN_KEYS = ('#','*')
 
 SUFFIX_KEYS = ()
 
@@ -24,8 +22,7 @@ ORTHOGRAPHY_WORDLIST = None
 
 KEYMAPS = {
         'Keyboard': {
-        '*-' : 'q',
-        'Y-' : 'a',
+        'Y-' : ('a','q','z'),
         'T-' : 's',
         'K-' : 'w',
         'N-' : 'd',
@@ -34,12 +31,12 @@ KEYMAPS = {
         'I-' : 'r',
         'O-' : 'g',
         'U-' : 't',
-        't-' : 'c',
-        'k-' : 'v',
+        't-' : ('v','Left'),
+        'k-' : ('b','Up'),
         'n-' : 'space',
-        '#'  : 'b',
-        '-*' : ('p','[',']'),
-        '-Y' : ';',
+        '#'  : ('Tab','Escape'),
+        '*' : ('\'','[',']','-','\\'),
+        '-Y' : (';','p','/'),
         '-T' : 'l',
         '-K' : 'o',
         '-N' : 'k',
@@ -48,23 +45,12 @@ KEYMAPS = {
         '-I' : 'u',
         '-O' : 'h',
         '-U' : 'y',
-        '-t' : 'm',
-        '-k' : 'n',
+        '-t' : ('m','Right'),
+        '-k' : ('n','Down'),
         '-n' : 'Return',
-        '-1' : '1',
-        '-2' : '2',
-        '-3' : '3',
-        '-4' : '4',
-        '-5' : '5',
-        '-6' : '6',
-        '-7' : '7',
-        '-8' : '8',
-        '-9' : '9',
-        '-0' : '0',
-        'arpeggiate' : (',','.','z','x'),
-        'no-op' : '\''
+        'arpeggiate' : 'Home',
         }
 }
 
 DICTIONARIES_ROOT = 'asset:Mejiro:dictionaries'
-DEFAULT_DICTIONARIES = ('Mejiro_Commands.json','Mejiro_Users.json','Mejiro_Verbs.py','Mejiro_Kana.py')
+DEFAULT_DICTIONARIES = ('Mejiro_Commands.json','Mejiro_Users.json','Mejiro_Verbs.py','Mejiro_Kana.py','Mejiro_Romaji.py')
