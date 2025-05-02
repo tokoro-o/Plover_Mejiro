@@ -25,29 +25,25 @@ def lookup(key):
     RightVowel = regex_groups.group(9)
     RightParticle = regex_groups.group(10)
 
-    print("LeftAsterisk\tLeftConsonant\tLeftVowel\tLeftParticle")
-    print(LeftY + "\t\t" + LeftConsonant + "\t\t" + LeftVowel + "\t\t" + LeftParticle)
-
-    print("RightAsterisk\tRightConsonant\tRightVowel\tRightParticle")
-    print(RightY + "\t\t" + RightConsonant + "\t\t" + RightVowel + "\t\t" + RightParticle)
+    print("stroke:" + stroke)
 
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
     Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","l","b","f"]
     listconsonant = ["","T","K","N","S","TK","TN","TS","NS","KS","KN","TKN","TNS","TKNS","TKS","KNS"]
 
-    Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
+    Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","au"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
-
-    excepts_in = ["wu","si","ti","tu","hu","zi"]
-    excepts_out = ["u","shi","chi","tsu","fu","ji"]
     
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
     if RightVowel not in listvowel:
          RightVowel = listvowel[9]
 
+    def 修正(result):
+        return result.replace('hu', 'fu').replace('si', 'shi').replace('sy', 'sh').replace('zi', 'ji').replace('zy', 'j').replace('ti', 'chi').replace('ty', 'ch').replace('tu', 'tsu').replace('wu', 'u').replace('ltsuk', 'kk').replace('ltsus', 'ss').replace('ltsut', 'tt').replace('ltsuc', 'cc').replace('ltsuh', 'hh').replace('ltsum', 'mm').replace('ltsur', 'rr').replace('ltsuw', 'ww').replace('ltsug', 'gg').replace('ltsuz', 'zz').replace('ltsuj', 'jj').replace('ltsud', 'dd').replace('ltsup', 'pp').replace('ltsub', 'bb').replace('nnk', 'nk').replace('nns', 'ns').replace('nnt', 'nt').replace('nnc', 'nc').replace('nnh', 'nh').replace('nnm', 'nm').replace('nnr', 'nr').replace('nnw', 'nw').replace('nng', 'ng').replace('nnz', 'nz').replace('nnj', 'nj').replace('nnd', 'nd').replace('nnp', 'np').replace('nnb', 'nb')
+    
     def Make(Ys,Conso,Vowel):
 
         output = ""
@@ -63,10 +59,8 @@ def lookup(key):
             else:
                 #そうでないとき
                 output += Vowels[listvowel.index(Vowel)]
-
-            if output in excepts_in:
-                output = excepts_out[excepts_in.index(output)]
-        print(output)
+            
+        print("output:" + output)
         return output
 
     resultL = Make(LeftY,LeftConsonant,LeftVowel)
@@ -77,7 +71,7 @@ def lookup(key):
         resultR = Make(RightY,RightConsonant,RightVowel)
 
     listParticle = ["","n","t","k","tk","tn","kn","tkn"]
-    listSecondWord = ["","nn","tsu","ku","ltu","chi","ki","-"]
+    listSecondWord = ["","nn","tsu","ku","ltsu","chi","ki","-"]
     listLParticle = ["",",","ni","no","de","to","wo","ka"]
     listRParticle = ["",",","ha","ga","mo","ha,","ga,","mo,"]
 
@@ -86,13 +80,15 @@ def lookup(key):
     
     #LeftParticleになにかあって左の指の入力もあるとき
     if not Asterisk and LeftParticle and (resultL or resultR):
+        print("zyoshi")
         resultL += listSecondWord[listParticle.index(LeftParticle)]
         print(resultL)
     #RightParticleになにかあって右の指の入力もあるとき
     if not Asterisk and RightParticle and (resultR or resultL and LeftParticle):
         resultR += listSecondWord[listParticle.index(RightParticle)]
         print(resultR)
-    if  (resultL or resultR) and not LeftParticle and RightParticle == "k" and not Hyphen and not Asterisk:#どちらの指にも入力が無いとき
+    if  (resultL or resultR) and not LeftParticle and RightParticle == "n" and not Hyphen and not Asterisk:#どちらの指にも入力が無いとき
+        print("suuji")
         result = ""
         if LeftY:
             result += "1"
@@ -115,13 +111,15 @@ def lookup(key):
         if RightY:
             result += "0"
 
-    elif  not resultL and not resultR:#どちらの指にも入力が無いとき
+    if  not resultL and not resultR:#どちらの指にも入力が無いとき
         result = listLParticle[listParticle.index(LeftParticle)] + listRParticle[listParticle.index(RightParticle)]
         if result in 助詞in:
             result = 助詞out[助詞in.index(result)]
             
     if result == "":
         result = resultL + resultR
+
+    result = 修正(result)
 
     if (resultL or resultR) and "#" in Hyphen:
         print("{^" + result * 2 + "^}")

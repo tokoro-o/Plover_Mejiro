@@ -39,11 +39,11 @@ def lookup(key):
 
     #Vowels =    ["u","a","i","o","ii","e","ou","yuu","oo","ui"]
     #Vowels2 =   ["you","ai","ya","yo","yu","ei","oi","aa","ae","uu"]
-    Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
+    Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","au"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
     firstvowel = [["A","YA","YOU","AIO"],["I","YIU"],["","YU","YAIO"],["AI","YAI"],["O","AO","YO","YAO"],["U"],["OU","IU"],["Y","YI"]]# a,i,u,e,o,ya,yu,yo
-    secondvowel = [["AIO"],["YU","YA","YIU","YO","YAI"],["AO","Y","IU","YAIO"],["YOU"],["YAO"]]# a,i,u,e,o
+    secondvowel = [["X"],["YU","YA","YIU","YO","YAI"],["AO","Y","IU","AIO","YAIO"],["YOU"],["YAO"]]# a,i,u,e,o
     ConsonantOrder = ["","k","s","t","n","h","m","r","w","g","d","z","b","p","f","x"]
 
     kana = [["あ","い","う","え","お","や","ゆ","よ"],
