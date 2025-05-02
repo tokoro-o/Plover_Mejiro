@@ -22,7 +22,7 @@ ORTHOGRAPHY_WORDLIST = None
 
 KEYMAPS = {
         'Keyboard': {
-        'Y-' : ('a','q','z'),
+        'Y-' : ('a','q'),
         'T-' : 's',
         'K-' : 'w',
         'N-' : 'd',
@@ -36,7 +36,7 @@ KEYMAPS = {
         'n-' : 'space',
         '#'  : ('Tab','Escape'),
         '*' : ('\'','[',']','-','\\'),
-        '-Y' : (';','p','/'),
+        '-Y' : (';','p'),
         '-T' : 'l',
         '-K' : 'o',
         '-N' : 'k',
@@ -49,6 +49,7 @@ KEYMAPS = {
         '-k' : ('n','Down'),
         '-n' : 'Return',
         'arpeggiate' : 'Home',
+        'no-op' : ('z','x','c',',','.','/')
         }
 }
 
