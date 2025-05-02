@@ -11,7 +11,7 @@ After installing this plugin, you need to turn it on in Plover:
    I recommend to use keyboards which have more than two thumb keys.(space, and more)
 
 ## Layout
-![image](https://github.com/user-attachments/assets/07dc717e-bdce-487c-8426-957e1d6fbf8c)
+![image](https://github.com/user-attachments/assets/8f78564c-b86d-4b81-91cd-e9d8f7063da9)
 ```
 #  Y  K  S  I  U  U  I  S  K  Y  *
 #  Y  T  N  A  O  O  A  N  T  Y  *
