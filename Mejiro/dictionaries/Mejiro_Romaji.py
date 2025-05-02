@@ -33,21 +33,23 @@ def lookup(key):
 
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
-    Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","x","b","f"]
+    Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","l","b","f"]
     listconsonant = ["","T","K","N","S","TK","TN","TS","NS","KS","KN","TKN","TNS","TKNS","TKS","KNS"]
 
     Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
     
-    excepts_in = ["ni","nu","nyuu","nyou",
+    excepts_in = ["wu","si","ti","tu","hu","zi",
+                  "ni","nu","nyuu","nyou",
                   "mi","mu",
-                  "wu","wya","wyu","wyo","wyuu","wyou","wii","wui","wuu","wei",
+                  "wya","wyu","wyo","wyuu","wyou","wii","wui","wuu","wei",
                   "di","du","de","dya","dyo","dyuu","dyou","dii","dei",
                   "fu","fyuu","fyou"]
-    excepts_out = ["nu","ni","nyou","nyuu",
+    excepts_out = ["u","shi","chi","tsu","fu","ji",
+                   "nu","ni","nyou","nyuu",
                    "mu","mi",
-                   "u","yaa","iu","yone","ee","ue","wi","ao","uxu","we",
+                   "yaa","iu","yone","ee","ue","wi","ao","ulu","we",
                    "thi","de","du","tye","sye","dhi","dei","zye","di",
                    "vu","qa","qo"]
 

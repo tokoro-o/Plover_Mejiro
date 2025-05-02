@@ -33,13 +33,16 @@ def lookup(key):
 
     #頻出順→『n,t,k,s,r,m,h,d,g,w,z,b,j,p』
 
-    Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","x","b","f"]
+    Consonants =    ["","t","k","n","s","h","m","z","g","r","d","w","p","l","b","f"]
     listconsonant = ["","T","K","N","S","TK","TN","TS","NS","KS","KN","TKN","TNS","TKNS","TKS","KNS"]
 
     Vowels =    ["u","a","i","o","ya","e","ou","yuu","yu","aa"]
     Vowels2 =   ["you","ai","yo","oi","ui","ei","oo","ii","ae","uu"]
     listvowel = ["","A","I","O","U","AI","AO","IU","OU","AIO"]
 
+    excepts_in = ["wu","si","ti","tu","hu","zi"]
+    excepts_out = ["u","shi","chi","tsu","fu","ji"]
+    
     if LeftVowel not in listvowel:
          LeftVowel = listvowel[9]
     if RightVowel not in listvowel:
@@ -61,6 +64,8 @@ def lookup(key):
                 #そうでないとき
                 output += Vowels[listvowel.index(Vowel)]
 
+            if output in excepts_in:
+                output = excepts_out[excepts_in.index(output)]
         print(output)
         return output
 
