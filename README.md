@@ -14,6 +14,7 @@ After installing this plugin, you need to turn it on in Plover:
 ## レイアウト(Layout)
 このシステムは普通のQwertyキーボードでも使うことができます.
    より快適に使うためには親指のキーが分かれているものを使うことをおすすめします.
+
 You can use Qwerty keyboard to use this theory.
    I recommend to use keyboards which have more than two thumb keys.(space, and more)
 ![image](https://github.com/user-attachments/assets/8f78564c-b86d-4b81-91cd-e9d8f7063da9)
@@ -33,26 +34,25 @@ tab  a  s  d  f  g  h  j  k  l  ;
 ```
 ## 使い方(How to use)
 
-### 母音(Vowel)
+### 母音(Vowels)
 
-カナ出力(kana output)
 | 出力  | 入力    |
 | --- | ----- |
-| あ   | `A`   |
-| い   | `I`   |
-| う   | (なし)  |
-| え   | `AO`  |
-| お   | `O`   |
-| や   | `IA`  |
-| ゆ   | `IAO` |
-| よ   | `IO`  |
+| あ段   | `A`   |
+| い段   | `I`   |
+| う段   | (なし)  |
+| え段   | `AI`  |
+| お段   | `O`   |
+| や段   | `U`  |
+| ゆ段   | `OU` |
+| よ段   | `YI`  |
 
-※「う段」は子音キーのみ（母音キーなし）で入力
-「う」は「わ行」の `KH` で入力。
+※「う段」は母音キーを使わず子音キーのみで入力.
+「あ行」の「う」単体は「わ行」の `TKN` のみで入力.
 
 ---
 
-### 子音
+### 子音(Consonants)
 
 | 出力     | 入力    |
 | ------ | ----- |
@@ -60,48 +60,39 @@ tab  a  s  d  f  g  h  j  k  l  ;
 | か行     | `K`   |
 | さ行     | `S`   |
 | た行     | `T`   |
-| な行     | `TH`  |
-| は行     | `H`   |
-| ま行     | `ST`  |
-| ら行     | `SH`  |
-| わ/を    | `KH`  |
-| が行     | `SK`  |
-| ざ行     | `STK` |
-| だ行     | `TK`  |
-| ば行     | `SKH` |
-| ぱ行     | `STH` |
-| ぁぃぅぇぉ等 | `TKH` |
+| な行     | `N`  |
+| は行     | `TK`   |
+| ま行     | `TN`   |
+| ら行     | `KS`   |
+| わ/を    | `TKN`   |
+| が行     | `NS`  |
+| ざ行     | `TS` |
+| だ行     | `KN`  |
+| ば行     | `TKS` |
+| ぱ行     | `TNS` |
+| ふぁ行     | `KNS` |
+| ぁぃぅ等    | `TKNS` |
+
+※「段」と「行」を組み合わせることで五十音を作ることができます.
+ (例)「か行」`K`と「あ段」`A`で`KA`は「か」になります.
 
 ---
 
-### 2音目ショートカット（アスタリスクなし）
+### 2音目(Extra)
 
 | 出力      | 入力   |
 | ------- | ---- |
+| つ       | `t`  |
 | く       | `k`  |
 | ん       | `n`  |
-| つ       | `t`  |
-| ー (長音)  | `h`  |
+| ち       | `tn` |
 | き       | `kn` |
-| っ (促音)  | `kt` |
-| ち       | `th` |
-| い または う | `nh` |
+| っ (促音)  | `tk` |
+| ー（外来長音)| `tkn` |
 
 ---
 
-### 2音目ショートカット（アスタリスクあり）
+## もっと詳しく知りたい方は(To Learn Theory)
 
-| 出力            | 入力    |
-| ------------- | ----- |
-| り             | `*k`  |
-| れ             | `*n`  |
-| る             | `*t`  |
-| ら             | `*h`  |
-| ろ             | `*kn` |
-| 直前の文字を繰り返す    | `*kt` |
-| いん            | `*th` |
-| あ, え, い のいずれか | `*nh` |
-## To Learn Theory
-
-Read this [note](https://note.com/jeebis_keyboard/n/ndb99792d80e9)
+[note](https://note.com/jeebis_keyboard/n/ndb99792d80e9)
 (It's written in only Japanease)
