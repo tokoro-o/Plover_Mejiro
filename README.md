@@ -1,30 +1,35 @@
 # メジロ式速記(Plover Mejiro)
 
 Plover用の日本語の速記システム
-  A Japanese stenography system for Plover.
+
+A Japanese stenography system for Plover.
 
 ---
 ## メジロ式を起動する(Activating Mejiro)
 
 このプラグインをPyPIでないプラグインとしてインストールします.
-  Install this plugin as a non-PyPI plugin.
+
+Install this plugin as a non-PyPI plugin.
 
 (手動でこれをインストールする場合は``Plover wiki``の[Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI)に従ってください.)
-  (To install this manually, follow the section under [Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI) on the Plover wiki.)
+
+(To install this manually, follow the section under [Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI) on the Plover wiki.)
 
 このプラグインをインストールしたあと,次のようにしてPloverで起動します.
-  After installing this plugin, you need to turn it on in Plover:
+
+After installing this plugin, you need to turn it on in Plover:
 
 Ploveメニューの歯車マーク``configuratio``から``Syste``タブを開き,``Mejiro``システムを選択して起動します.
-  In Plover's configuration, go to the ``Systems`` tab, and change the active system to ``Mejiro``.
+
+In Plover's configuration, go to the ``Systems`` tab, and change the active system to ``Mejiro``.
 
 ---
 ## レイアウト(Layout)
 このシステムは普通のQwertyキーボードでも使うことができます.
-   より快適に使うためには親指のキーが分かれているものを使うことをおすすめします.
+  より快適に使うためには親指のキーが分かれているものを使うことをおすすめします.
 
 You can use Qwerty keyboard to use this theory.
-   I recommend to use keyboards which have more than two thumb keys.(space, and more)
+  I recommend to use keyboards which have more than two thumb keys.(space, and more)
 ![image](https://github.com/user-attachments/assets/8f78564c-b86d-4b81-91cd-e9d8f7063da9)
 ```
 #  Y  K  S  I  U  U  I  S  K  Y  *
@@ -33,7 +38,8 @@ You can use Qwerty keyboard to use this theory.
                n  n             
 ```
 キーボード上では次のようになっています.
-  (which originally look like)
+
+which originally look like
 ```
 esc  q  w  e  r  t  y  u  i  o  p 
 tab  a  s  d  f  g  h  j  k  l  ;
@@ -56,8 +62,8 @@ tab  a  s  d  f  g  h  j  k  l  ;
 | ゆ段   | `OU` |
 | よ段   | `YI`  |
 
-※「う段」は母音キーを使わず子音キーのみで入力.
-「あ行」の「う」単体は「わ行」の `TKN` のみで入力.
+※「う段」は母音キーを使わず子音キーのみで入力,
+  「あ行」の「う」単体は「わ行」の `TKN` のみで入力します.
 
 ---
 
@@ -83,7 +89,8 @@ tab  a  s  d  f  g  h  j  k  l  ;
 | ぁぃぅ等    | `TKNS` |
 
 ※「段」と「行」を組み合わせることで五十音を作ることができます.
- (例)「か行」`K`と「あ段」`A`で`KA`は「か」になります.
+  (例)
+  「か行」`K`と「あ段」`A`で`KA`は「か」になります.
 
 ---
 
@@ -100,8 +107,10 @@ tab  a  s  d  f  g  h  j  k  l  ;
 | ー（外来長音)| `tkn` |
 
 ※このキーを組み合わせると音の最後に二音目の音を追加できます.
- 特に音読みの漢字に対して使います
-   (例)「TAk」→「たく」,「SAn」→「さん」
+  特に音読みの漢字に対して使います
+  (例)
+  `TAk`→「たく」
+  `SAn`→「さん」
 
 ---
 
@@ -109,8 +118,9 @@ tab  a  s  d  f  g  h  j  k  l  ;
 
 母音は,`Y`キーを押しているかそうでないかによって変化します.
 
-| 通常時 |
-| ----- |
+| 通常時 |(Yなし)|
+|  出力  |  入力  |
+| ----- | ----- |
 | う   | (なし)  |
 | あ   | `A`   |
 | い   | `I`   |
@@ -124,8 +134,9 @@ tab  a  s  d  f  g  h  j  k  l  ;
 
 ---
 
-| Yと同時 |
-| ------ |
+| Yと同時 |(Yあり)|
+|  出力  |  入力  |
+|  ---  |  ---  |
 | よう  | `Y` |
 | あい  | `YA` |
 | よ   | `YI` |
@@ -146,9 +157,16 @@ tab  a  s  d  f  g  h  j  k  l  ;
 | 繰り返す | `#` |
 | 略語モード | `*` |
 
+※`#`を押すと,全体の出力がもう一度繰り返されます.
+  `TKAn-TAtkn`→「ハンター」
+  `#TKAn-TAtkn`→「ハンターハンター」
+
+※`*`を押すと,略語モードで動作します.
+  Verb辞書を使うためにも,あなた独自の略語のuser辞書を使うためにも必要です.
+
 ---
 
 ## もっと詳しく知りたい方は(To Learn Theory)
 
 [note](https://note.com/jeebis_keyboard/n/ndb99792d80e9)
-(It's written in only Japanease)
+  (It's written in only Japanease)
