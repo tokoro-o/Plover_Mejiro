@@ -95,10 +95,8 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 
 ※「段」と「行」を組み合わせることで五十音を作ることができます.
 
-(例)
-
-  「か行」`K`と「あ段」`A`で
-   `KA`→「か」
+#### (例)
+「か行」`K`+「あ段」`A`=`KA`→「か」
 
 ---
 
@@ -117,10 +115,8 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 ※このキーを組み合わせると音の最後に二音目の音を追加できます.
   特に音読みの漢字に対して使います
 
-(例)
-
-  `TAk`→「たく」
-  `SAn`→「さん」
+#### (例)
+`TAk`→「たく」,`SAn`→「さん」
 
 ---
 
@@ -141,8 +137,6 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 | ゆ   | `OU` |
 | ゆう  | `IU`  |
 | あう  | `AIOU` |
-
----
 
 #### Yと同時(Yあり)
 |  出力  |  入力  |
