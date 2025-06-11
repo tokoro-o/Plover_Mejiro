@@ -6,7 +6,6 @@ A Japanese stenography system for Plover.
 ## メジロ式を起動する(Activating Mejiro)
 
 このプラグインをPyPIでないプラグインとしてインストールします.
-
 Install this plugin as a non-PyPI plugin.
 
 (手動でこれをインストールする場合は``Plover wiki``の[Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI)に従ってください.)
