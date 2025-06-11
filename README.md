@@ -1,22 +1,22 @@
 # メジロ式速記(Plover Mejiro)
 
- Plover用の日本語の速記システム
- A Japanese stenography system for Plover.
+Plover用の日本語の速記システム
+  A Japanese stenography system for Plover.
 
 ---
 ## メジロ式を起動する(Activating Mejiro)
 
- このプラグインをPyPIでないプラグインとしてインストールします.
- Install this plugin as a non-PyPI plugin.
- (手動でこれをインストールする場合は``Plover wiki``の[Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI)に従ってください.)
+このプラグインをPyPIでないプラグインとしてインストールします.
+  Install this plugin as a non-PyPI plugin.
 
- (To install this manually, follow the section under [Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI) on the Plover wiki.)
+(手動でこれをインストールする場合は``Plover wiki``の[Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI)に従ってください.)
+  (To install this manually, follow the section under [Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI) on the Plover wiki.)
 
- このプラグインをインストールしたあと,次のようにしてPloverで起動します.
- After installing this plugin, you need to turn it on in Plover:
+このプラグインをインストールしたあと,次のようにしてPloverで起動します.
+  After installing this plugin, you need to turn it on in Plover:
 
- Ploveメニューの歯車マーク``configuratio``から``Syste``タブを開き,``Mejiro``システムを選択して起動します.
- In Plover's configuration, go to the ``Systems`` tab, and change the active system to ``Mejiro``.
+Ploveメニューの歯車マーク``configuratio``から``Syste``タブを開き,``Mejiro``システムを選択して起動します.
+  In Plover's configuration, go to the ``Systems`` tab, and change the active system to ``Mejiro``.
 
 ---
 ## レイアウト(Layout)
@@ -32,8 +32,8 @@ You can use Qwerty keyboard to use this theory.
    -  -  -  t  k  k  t  -  -  -
                n  n             
 ```
- キーボード上では次のようになっています.
- (which originally look like)
+キーボード上では次のようになっています.
+  (which originally look like)
 ```
 esc  q  w  e  r  t  y  u  i  o  p 
 tab  a  s  d  f  g  h  j  k  l  ;
@@ -101,7 +101,7 @@ tab  a  s  d  f  g  h  j  k  l  ;
 
 ※このキーを組み合わせると音の最後に二音目の音を追加できます.
  特に音読みの漢字に対して使います
- (例)「TAk」→「たく」,「SAn」→「さん」
+   (例)「TAk」→「たく」,「SAn」→「さん」
 
 ---
 
