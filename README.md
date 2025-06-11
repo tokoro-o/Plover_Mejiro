@@ -96,7 +96,9 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 ※「段」と「行」を組み合わせることで五十音を作ることができます.
 
 (例)
-  「か行」`K`と「あ段」`A`で`KA`は「か」になります.
+
+  「か行」`K`と「あ段」`A`で
+   `KA`→「か」
 
 ---
 
@@ -116,6 +118,7 @@ The default key layout may be different from your keyboard. If so, in Plover's `
   特に音読みの漢字に対して使います
 
 (例)
+
   `TAk`→「たく」
   `SAn`→「さん」
 
@@ -125,7 +128,7 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 
 母音は,`Y`キーを押しているかそうでないかによって変化します.
 
-| 通常時 |(Yなし)|
+#### 通常時(Yなし)
 |  出力  |  入力  |
 | ----- | ----- |
 | う   | (なし)  |
@@ -141,7 +144,7 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 
 ---
 
-| Yと同時 |(Yあり)|
+#### Yと同時(Yあり)
 |  出力  |  入力  |
 |  ---  |  ---  |
 | よう  | `Y` |
@@ -165,8 +168,10 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 | 略語モード | `*` |
 
 ※`#`を押すと,全体の出力がもう一度繰り返されます.
-  `TKAn-TAtkn`→「ハンター」
-  `#TKAn-TAtkn`→「ハンターハンター」
+
+`TKAn-TAtkn`→「ハンター」
+
+`#TKAn-TAtkn`→「ハンターハンター」
 
 ※`*`を押すと,略語モードで動作します.
   Verb辞書を使うためにも,あなた独自の略語のuser辞書を使うためにも必要です.
