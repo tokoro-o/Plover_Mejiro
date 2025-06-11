@@ -5,21 +5,24 @@ Plover用の日本語の速記システム
 A Japanese stenography system for Plover.
 
 ---
-## メジロ式を起動する(Activating Mejiro)
+## メジロ式をインストールする(Installing Mejiro)
 
 このプラグインをPyPIでないプラグインとしてインストールします.
 
-Install this plugin as a non-PyPI plugin.
-
 (手動でこれをインストールする場合は``Plover wiki``の[Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI)に従ってください.)
+
+Install this plugin as a non-PyPI plugin.
 
 (To install this manually, follow the section under [Plugins not on PyPI](https://plover.wiki/index.php/Plugins#Plugins_not_on_PyPI) on the Plover wiki.)
 
+---
+## メジロ式を起動する(Activating Mejiro)
+
 このプラグインをインストールしたあと,次のようにしてPloverで起動します.
 
-After installing this plugin, you need to turn it on in Plover:
-
 Ploveメニューの歯車マーク``configuration``から``Systems``タブを開き,``Mejiro``システムを選択して起動します.
+
+After installing this plugin, you need to turn it on in Plover:
 
 In Plover's ``configuration``, go to the ``Systems`` tab, and change the active system to ``Mejiro``.
 
@@ -71,7 +74,6 @@ The default key layout may be different from your keyboard. If so, in Plover's `
   「あ行」の「う」単体は「わ行」の `TKN` のみで入力します.
 
 ---
-
 ### 子音(Consonants)
 
 | 出力     | 入力    |
@@ -99,7 +101,6 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 「か行」`K`+「あ段」`A`=`KA`→「か」
 
 ---
-
 ### 2音目(Extra)
 
 | 出力      | 入力   |
@@ -119,7 +120,6 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 `TAk`→「たく」,`SAn`→「さん」
 
 ---
-
 ### Y母音(Special Vowels)
 
 母音は,`Y`キーを押しているかそうでないかによって変化します.
@@ -153,7 +153,6 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 | うう  | `YAIOU` |
 
 ---
-
 ### 特殊(Special)
 
 | 機能 | 入力  |
@@ -171,7 +170,6 @@ The default key layout may be different from your keyboard. If so, in Plover's `
   Verb辞書を使うためにも,あなた独自の略語のuser辞書を使うためにも必要です.
 
 ---
-
 ## もっと詳しく知りたい方は(To Learn Theory)
 
 [note](https://note.com/jeebis_keyboard/n/ndb99792d80e9)
