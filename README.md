@@ -19,9 +19,9 @@ Install this plugin as a non-PyPI plugin.
 
 After installing this plugin, you need to turn it on in Plover:
 
-Ploveメニューの歯車マーク``configuratio``から``Syste``タブを開き,``Mejiro``システムを選択して起動します.
+Ploveメニューの歯車マーク``configuration``から``Systems``タブを開き,``Mejiro``システムを選択して起動します.
 
-In Plover's configuration, go to the ``Systems`` tab, and change the active system to ``Mejiro``.
+In Plover's ``configuration``, go to the ``Systems`` tab, and change the active system to ``Mejiro``.
 
 ---
 ## レイアウト(Layout)
@@ -41,11 +41,15 @@ You can use Qwerty keyboard to use this theory.
 
 which originally look like
 ```
-esc  q  w  e  r  t  y  u  i  o  p 
-tab  a  s  d  f  g  h  j  k  l  ;
+esc  q  w  e  r  t  y  u  i  o  p  [
+tab  a  s  d  f  g  h  j  k  l  ;  "
      z  x  c  v  b  n  m  ,  .  
-          space  enter   
+             space  enter   
 ```
+※あなたのキーボード配置とは異なる可能性があります.異なる場合,Ploveメニューの歯車マーク``configuration``から``machine``タブを開き,キー配置を変更してください.
+
+The default key layout may be different from your keyboard. If so, in Plover's ``configuration``, go to the ``Systems`` tab, and change the layout.
+
 ---
 ## 使い方(How to use)
 
