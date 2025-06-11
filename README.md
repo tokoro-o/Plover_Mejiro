@@ -42,10 +42,10 @@ I recommend to use keyboards which have more than two thumb keys.(space, and mor
 
 which originally look like
 ```
-esc  q  w  e  r  t  y  u  i  o  p  [
-tab  a  s  d  f  g  h  j  k  l  ;  "
-     z  x  c  v  b  n  m  ,  .  
-             space  enter   
+esc q  w  e  r  t  y  u  i  o  p  [
+tab a  s  d  f  g  h  j  k  l  ;  "
+    z  x  c  v  b  n  m  ,  .  
+            space  enter   
 ```
 ※あなたのキーボード配置とは異なる可能性があります.異なる場合,Ploveメニューの歯車マーク``configuration``から``machine``タブを開き,キー配置を変更してください.
 
@@ -165,7 +165,7 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 
 `TKAn-TAtkn`→「ハンター」
 
-`#TKAn-TAtkn`→「ハンターハンター」
+`TKAn#TAtkn`→「ハンターハンター」
 
 ※`*`を押すと,略語モードで動作します.
   Verb辞書を使うためにも,あなた独自の略語のuser辞書を使うためにも必要です.
