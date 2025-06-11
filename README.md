@@ -26,10 +26,11 @@ In Plover's ``configuration``, go to the ``Systems`` tab, and change the active 
 ---
 ## レイアウト(Layout)
 このシステムは普通のQwertyキーボードでも使うことができます.
-  より快適に使うためには親指のキーが分かれているものを使うことをおすすめします.
+
+より快適に使うためには親指のキーが分かれているものを使うことをおすすめします.
 
 You can use Qwerty keyboard to use this theory.
-  I recommend to use keyboards which have more than two thumb keys.(space, and more)
+I recommend to use keyboards which have more than two thumb keys.(space, and more)
 ![image](https://github.com/user-attachments/assets/8f78564c-b86d-4b81-91cd-e9d8f7063da9)
 ```
 #  Y  K  S  I  U  U  I  S  K  Y  *
@@ -93,7 +94,8 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 | ぁぃぅ等    | `TKNS` |
 
 ※「段」と「行」を組み合わせることで五十音を作ることができます.
-  (例)
+
+(例)
   「か行」`K`と「あ段」`A`で`KA`は「か」になります.
 
 ---
@@ -112,7 +114,8 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 
 ※このキーを組み合わせると音の最後に二音目の音を追加できます.
   特に音読みの漢字に対して使います
-  (例)
+
+(例)
   `TAk`→「たく」
   `SAn`→「さん」
 
