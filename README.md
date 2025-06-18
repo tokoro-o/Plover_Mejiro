@@ -46,7 +46,7 @@ I recommend to use keyboards which have more than two thumb keys.(space, and mor
 which originally look like
 ```
 esc q  w  e  r  t  y  u  i  o  p  [
-tab a  s  d  f  g  h  j  k  l  ;  "
+tab a  s  d  f  g  h  j  k  l  ;  '
     z  x  c  v  b  n  m  ,  .  
             space  enter   
 ```
@@ -98,7 +98,7 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 ※「段」と「行」を組み合わせることで五十音を作ることができます.
 
 #### (例)
-「か行」`K`+「あ段」`A`=`KA`→「か」
+「か行」`K` +「あ段」`A` = `KA` →「か」
 
 ---
 ### 2音目(Extra)
@@ -117,7 +117,7 @@ The default key layout may be different from your keyboard. If so, in Plover's `
   特に音読みの漢字に対して使います
 
 #### (例)
-`TAk`→「たく」,`SAn`→「さん」
+`TAk` →「たく」,`SAn` →「さん」
 
 ---
 ### Y母音(Special Vowels)
@@ -162,9 +162,9 @@ The default key layout may be different from your keyboard. If so, in Plover's `
 
 ※`#`を押すと,全体の出力がもう一度繰り返されます.
 
-`TKAn-TAtkn`→「ハンター」
+`TKAn-TAtkn` →「ハンター」
 
-`TKAn#TAtkn`→「ハンターハンター」
+`TKAn#TAtkn` →「ハンターハンター」
 
 ※`*`を押すと,略語モードで動作します.
   Verb辞書を使うためにも,あなた独自の略語のuser辞書を使うためにも必要です.
