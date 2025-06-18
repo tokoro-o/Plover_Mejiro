@@ -32,8 +32,7 @@ In Plover's ``configuration``, go to the ``Systems`` tab, and change the active 
 
 より快適に使うためには親指のキーが分かれているものを使うことをおすすめします.
 
-You can use Qwerty keyboard to use this theory.
-I recommend to use keyboards which have more than two thumb keys.(space, and more)
+You can use this steno with a QWERTY keyboard, though it’s better with one that has more than two thumb keys, such as space and others.
 ![image](https://github.com/user-attachments/assets/8f78564c-b86d-4b81-91cd-e9d8f7063da9)
 ```
 #  Y  K  S  I  U  U  I  S  K  Y  *
