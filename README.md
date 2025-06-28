@@ -4,6 +4,8 @@ Plover用の日本語の速記システム
 
 A Japanese stenography system for Plover.
 
+![image](https://github.com/user-attachments/assets/9990e8d8-581b-4867-871d-f501dc9be21e)
+
 ---
 ## メジロ式をインストールする(Installing Mejiro)
 
