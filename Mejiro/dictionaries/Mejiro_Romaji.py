@@ -92,7 +92,7 @@ def lookup(key):
     listRParticle = ["",",","ha","ga","mo","ha,","ga,","mo,"]
 
     助詞in = ["ha,","ga,","mo,",",ha",",ga",",mo",",ha,",",ga,",",mo,","niga","niga,","dega","dega,","kaga","kaga,","woga","woga,"]
-    助詞out = [".",",","-","ha,","ga,","mo,","desita","desu","nn","noni","noni,","node","node,","noka","noka,","nowo","nowo,"]
+    助詞out = [".",",","-","ha,","ga,","mo,","!","?","nn","noni","noni,","node","node,","noka","noka,","nowo","nowo,"]
     
     #LeftParticleになにかあって左の指の入力もあるとき
     if not Asterisk and LeftParticle and (resultL or resultR):
