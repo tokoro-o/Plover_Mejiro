@@ -70,6 +70,24 @@ def lookup(key):
         print(output)
         return output
 
+    def process_map_output_wrapping(text):
+        """
+        asterisk_map からの出力が単一のアルファベット文字であれば、
+        小文字に変換し、先頭に{MODE:SET_SPACE:}を付け、{#shift(F1)} で囲みます。
+        （Google 日本語入力で"Shift + F1"を「半角英数切り替え」と設定しています）
+        """
+        if text and len(text) == 1 and text.isalpha():
+            return "{MODE:SET_SPACE:}{#shift(F1)}" + text.lower() + "{#shift(F1)}"
+        return text
+
+    def add_set_space_if_alphabet(text):
+        """
+        テキストが単一のアルファベット文字であれば、先頭に {MODE:SET_SPACE:} を追加します。
+        """
+        if text and len(text) == 1 and text.isalpha():
+            return "{MODE:SET_SPACE:}" + text
+        return text
+
     if Asterisk == "*":
         asterisk_map = {
             'a': 'I', 'i': '1', 'u': 'という', 'e': 'A', 'o': 'O',
@@ -77,7 +95,7 @@ def lookup(key):
             'kya': 'から', 'kyu': 'Q', 'kyo': 'これ',
             'ga': 'がわ', 'gi': 'とき', 'gu': 'くり', 'ge': 'わけ', 'go': '5',
             'gya': 'がら', 'gyu': 'グラム', 'gyo': 'この',
-            'sa': '3', 'shi': 'C', 'su': 'S', 'se': 'ソ', 'so': 'として',
+            'sa': '3', 'shi': 'C', 'su': 'S', 'se': '', 'so': 'として',
             'sha': 'さま', 'shu': 'する', 'sho': 'それ',
             'za': 'とし', 'ji': 'G', 'zu': 'Z', 'ze': 'J', 'zo': 'そこ',
             'ja': 'した', 'ju': 'して', 'jo': 'その',
@@ -98,88 +116,64 @@ def lookup(key):
             'ya': 'やま', 'yu': 'U', 'yo': '4',
             'ra': 'R', 'ri': 'より', 'ru': 'L', 're': '0', 'ro': '6',
             'rya': 'られ', 'ryu': 'れる', 'ryo': 'ところ',
-            'wa': 'Y', 'wi': 'イン', 'we': '.', 'wo': 'ー',
+            'wa': 'Y', 'wi': '', 'nn': '.', 'wo': ',',
             'ヲ': ',', 'ヮ': 'わり', 'ッ': 'について', 'ヴ': 'において'
         }
 
         resultL = Make(LeftY, LeftConsonant, LeftVowel)
         resultR = Make(RightY, RightConsonant, RightVowel)
         
-        # `si`を`shi`に変換するなどの処理を適用
         corrected_L = 修正(resultL)
         corrected_R = 修正(resultR)
 
         combined_key = corrected_L + corrected_R
         
-        final_output = ""
-        # まず結合したキー（例: "ki"）で辞書を検索
-        if combined_key and combined_key in asterisk_map:
-            final_output = asterisk_map[combined_key]
-        # 結合したキーに一致するものがない場合、左右個別のキーで検索
-        else:
-            outputL = asterisk_map.get(corrected_L, "") if corrected_L else ""
-            outputR = asterisk_map.get(corrected_R, "") if corrected_R else ""
-            final_output = outputL + outputR
+        output_to_wrap = ""
 
-        if final_output:
-            return "{^" + final_output + "^}"
+        if combined_key and combined_key in asterisk_map:
+            original_map_value = asterisk_map[combined_key]
+            processed_from_map = process_map_output_wrapping(original_map_value)
+            if len(original_map_value) == 1 and original_map_value.isalpha():
+                output_to_wrap = add_set_space_if_alphabet(processed_from_map)
+            else:
+                output_to_wrap = processed_from_map
+
+        #elif LeftParticle == "tkn" and RightParticle == "tkn":
+        #   output_to_wrap = "EE"
+        #elif LeftParticle == "tkn" or RightParticle == "tkn":
+        #    output_to_wrap = add_set_space_if_alphabet("E")
+        elif RightParticle == "tkn":
+           output_to_wrap = "{MODE:SET_SPACE:}{#shift(F1)}e{#shift(F1)}"
+        #elif LeftParticle == "tkn" or RightParticle == "tkn":
+        #    output_to_wrap = add_set_space_if_alphabet("E")
+        
         else:
-            # どのキーにも一致しなかった場合はエラー
+            processed_L = ""
+            if corrected_L:
+                mapped_L = asterisk_map.get(corrected_L, "")
+                wrapped_L = process_map_output_wrapping(mapped_L)
+                if len(mapped_L) == 1 and mapped_L.isalpha():
+                    processed_L = add_set_space_if_alphabet(wrapped_L)
+                else:
+                    processed_L = wrapped_L
+            
+            processed_R = ""
+            if corrected_R:
+                mapped_R = asterisk_map.get(corrected_R, "")
+                wrapped_R = process_map_output_wrapping(mapped_R)
+                if len(mapped_R) == 1 and mapped_R.isalpha():
+                    processed_R = add_set_space_if_alphabet(wrapped_R)
+                else:
+                    processed_R = wrapped_R
+            
+            output_to_wrap = processed_L + processed_R
+
+        if output_to_wrap:
+            if "{MODE:SET_SPACE:}" in output_to_wrap:
+                return output_to_wrap
+            else:
+                return "{^" + output_to_wrap + "^}"
+        else:
             raise KeyError
 
-    # --- 以下、アスタリスクが押されていない場合の通常の処理 ---
     
-    resultL = Make(LeftY,LeftConsonant,LeftVowel)
-    resultR = ""
-    result = ""
-
-    if resultL or RightY or RightConsonant or RightVowel:
-        resultR = Make(RightY,RightConsonant,RightVowel)
-
-    listParticle = ["","n","t","k","tk","tn","kn","tkn"]
-    listSecondWord = ["","nn","tsu","ku","ltsu","chi","ki","-"]
-    listLParticle = ["",",","ni","no","de","to","wo","ka"]
-    listRParticle = ["",",","ha","ga","mo","ha,","ga,","mo,"]
-
-    助詞in = ["ha,","ga,","mo,","ha","ga","mo","ha,","ga,","mo,","niga","niga,","dega","dega,","kaga","kaga,","woga","woga,"]
-    助詞out = [".",",","-","ha,","ga,","mo,","!","?","nn","noni","noni,","node","node,","noka","noka,","nowo","nowo,"]
-    
-    if not Asterisk and LeftParticle and (resultL or resultR):
-        print("zyoshi")
-        resultL += listSecondWord[listParticle.index(LeftParticle)]
-        print(resultL)
-
-    if not Asterisk and RightParticle and (resultR or resultL and LeftParticle):
-        resultR += listSecondWord[listParticle.index(RightParticle)]
-        print(resultR)
-
-    if (resultL or resultR) and not LeftParticle and RightParticle == "n" and not Hyphen and not Asterisk:
-        print("suuji")
-        result = ""
-        if LeftY: result += "1"
-        if "K" in LeftConsonant: result += "2"
-        if "S" in LeftConsonant: result += "3"
-        if "I" in LeftVowel: result += "4"
-        if "U" in LeftVowel: result += "5"
-        if "U" in RightVowel: result += "6"
-        if "I" in RightVowel: result += "7"
-        if "S" in RightConsonant: result += "8"
-        if "K" in RightConsonant: result += "9"
-        if RightY: result += "0"
-
-    if not resultL and not resultR:
-        result = listLParticle[listParticle.index(LeftParticle)] + listRParticle[listParticle.index(RightParticle)]
-        if result in 助詞in:
-            result = 助詞out[助詞in.index(result)]
-            
-    if result == "":
-        result = resultL + resultR
-
-    result = 修正(result)
-
-    if (resultL or resultR) and "#" in Hyphen:
-        print("{^" + result * 2 + "^}")
-        return "{^" + result * 2 + "^}"
-    else:
-        print("{^" + result + "^}")
-        return "{^" + result + "^}"
